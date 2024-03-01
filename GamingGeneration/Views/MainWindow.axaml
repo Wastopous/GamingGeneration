@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GamingGeneration.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
+        x:Class="GamingGeneration.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        xmlns:views="clr-namespace:GamingGeneration.Views"
+        Icon="/Assets/gg.ico"
+        Title="GamingGeneration"     
+        Width="600"
+        Height="300">
+<StackPanel>
+    <views:EnterUC  >
+            <Grid Background="Black">
+                    <Panel>
+                            <TextBlock Text="Добро пожаловать в Gaming Generation" HorizontalAlignment="Center" Margin="0 40 0 0" FontFamily="Ethnocentric RUS-LAT" FontSize="17" Foreground="White" Background="Black" ></TextBlock>
+                            <TextBlock Text="Введите своё имя" HorizontalAlignment="Center" Margin="0 100 0 0" FontFamily="Ethnocentric RUS-LAT" FontSize="16" Foreground="White" Background="Black" ></TextBlock>
+                            <TextBox Watermark="Ваше имя здесь" FontFamily="Ethnocentric RUS-LAT" Margin="0 30 0 0"  Height="20" Width="200"></TextBox>
+                            <Button Height="30" Content="Войти" Foreground="Black" FontFamily="Ethnocentric RUS-LAT" FontSize="14" HorizontalAlignment="Center" Margin="0 120 0 0" Background="Azure" ></Button>
+                    </Panel>
+            </Grid>
+    </views:EnterUC>
+        <Grid Background="Black">
+            <TabControl >
+                 <TabItem Header="Генерация" Width="299" HorizontalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="Black">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                <Panel Margin="-25 -100 0 0 " >
+                                        <Button  Content="Никнейм" Width="200" Height="150" Margin="0  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="SlateGray"  />
+                                        <Button Content="Пароль" Width="200" Height="150" Margin="200  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="SlateGray"/>
+                                        <!--<Button Content="E-mail" Width="200" Height="150" Margin="200  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                        <Button Content="Avatar" Width="200" Height="150" Margin="200  300 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <Button Content="" Width="200" Height="150" Margin="400  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                        <Button Content="" Width="200" Height="150" Margin="400  300 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>-->
+                                </Panel>
+                        </StackPanel>
+                     </TabItem >
+                    <TabItem  Header="Сохранённое" Width="300"  HorizontalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="Black"></TabItem>
+             </TabControl>
+        </Grid>
+</StackPanel>
+
+        <!-- <Design.DataContext>
+        This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) 
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>-->
+</Window>

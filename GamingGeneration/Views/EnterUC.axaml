@@ -1,0 +1,17 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
+             x:Class="GamingGeneration.Views.EnterUC"
+             Width="600"
+             Height="300">
+            <Grid Background="Black">
+                <Panel>
+                    <TextBlock Text="Добро пожаловать в Gaming Generation" HorizontalAlignment="Center" Margin="0 40 0 0" FontFamily="Ethnocentric RUS-LAT" FontSize="17" Foreground="White" Background="Black" ></TextBlock>
+                    <TextBlock Text="Введите своё имя" HorizontalAlignment="Center" Margin="0 100 0 0" FontFamily="Ethnocentric RUS-LAT" FontSize="16" Foreground="White" Background="Black" ></TextBlock>
+                    <TextBox Watermark="Ваше имя здесь" FontFamily="Ethnocentric RUS-LAT" Margin="0 30 0 0"  Height="20" Width="200"></TextBox>
+                    <Button Height="30" Content="Войти" Foreground="Black" FontFamily="Ethnocentric RUS-LAT" FontSize="14" HorizontalAlignment="Center" Margin="0 120 0 0" Background="Azure" Click="Button_OnClick" ></Button>
+                </Panel>
+            </Grid>
+</UserControl>
