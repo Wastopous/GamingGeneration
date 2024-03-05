@@ -3,47 +3,30 @@
         xmlns:vm="using:GamingGeneration.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
+        mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="700"
         x:Class="GamingGeneration.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         xmlns:views="clr-namespace:GamingGeneration.Views"
         Icon="/Assets/gg.ico"
         Title="GamingGeneration"     
-        Width="600"
-        Height="300">
-<StackPanel>
-    <views:EnterUC  >
-            <Grid Background="Black">
-                    <Panel>
-                            <TextBlock Text="Добро пожаловать в Gaming Generation" HorizontalAlignment="Center" Margin="0 40 0 0" FontFamily="Ethnocentric RUS-LAT" FontSize="17" Foreground="White" Background="Black" ></TextBlock>
-                            <TextBlock Text="Введите своё имя" HorizontalAlignment="Center" Margin="0 100 0 0" FontFamily="Ethnocentric RUS-LAT" FontSize="16" Foreground="White" Background="Black" ></TextBlock>
-                            <TextBox Watermark="Ваше имя здесь" FontFamily="Ethnocentric RUS-LAT" Margin="0 30 0 0"  Height="20" Width="200"></TextBox>
-                            <Button Height="30" Content="Войти" Foreground="Black" FontFamily="Ethnocentric RUS-LAT" FontSize="14" HorizontalAlignment="Center" Margin="0 120 0 0" Background="Azure" ></Button>
-                    </Panel>
-            </Grid>
-    </views:EnterUC>
-        <Grid Background="Black">
-            <TabControl >
-                 <TabItem Header="Генерация" Width="299" HorizontalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="Black">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                                <Panel Margin="-25 -100 0 0 " >
-                                        <Button  Content="Никнейм" Width="200" Height="150" Margin="0  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="SlateGray"  />
-                                        <Button Content="Пароль" Width="200" Height="150" Margin="200  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="SlateGray"/>
-                                        <!--<Button Content="E-mail" Width="200" Height="150" Margin="200  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                                        <Button Content="Avatar" Width="200" Height="150" Margin="200  300 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                        <Button Content="" Width="200" Height="150" Margin="400  0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                                        <Button Content="" Width="200" Height="150" Margin="400  300 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>-->
-                                </Panel>
-                        </StackPanel>
+        Width="1000"
+        Height="700">
+        <Grid Background="#171d25">
+                <TabControl Name="GGTabControl" >
+                 <TabItem Name="NickTabItem"   Header="НИКНЕЙМ" Width="130" HorizontalContentAlignment="Center" FontFamily="Motiva Sans" FontSize="20" Foreground="White" Background="#171d25" >
+                         <Panel  VerticalAlignment="Center" >
+                                 <TextBox Name="NameTextBox" Watermark="НИК ГЕНЕРИРУЕТСЯ НА ВАШЕМ ИМЕНИ" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Height="40" Width="260" BorderBrush="#ffffff" FontFamily="Motiva Sans" FontSize="13" Foreground="White" Background="#171d25" Margin="0  -340 0 0"></TextBox> 
+                                 <Button Name="NikGenButton" Content="▶  СГЕНЕРИРОВАТЬ НИК" Focusable="False" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="300" FontWeight="Bold" Height="46" Margin="0  -230 0 0" Foreground="#ffffff"  Background="#6dd51f"  FontFamily="Motiva Sans" FontSize="17" ></Button>
+
+                         </Panel>
                      </TabItem >
-                    <TabItem  Header="Сохранённое" Width="300"  HorizontalContentAlignment="Center" FontFamily="Ethnocentric RUS-LAT" FontSize="20" Foreground="White" Background="Black"></TabItem>
+                    <TabItem Name="PassTabItem" Header="ПАРОЛЬ"  Width="110"  HorizontalContentAlignment="Center" FontFamily="Motiva Sans" FontSize="20" Foreground="White" Background="#171d25">
+                            <Panel>
+                                    <TextBox Name="PassTextBox"  IsReadOnly="True" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" Height="40" Width="260" BorderBrush="#ffffff" FontFamily="Motiva Sans" FontSize="20" Foreground="White" Background="#171d25" Margin="0  -340 0 0"></TextBox> 
+                                    <Button Name="PassGenButton" Content="▶  СГЕНЕРИРОВАТЬ ПАРОЛЬ" Focusable="False" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="300" FontWeight="Bold" Height="46" Margin="0  -230 0 0" Foreground="#ffffff"  Background="#6dd51f"  FontFamily="Motiva Sans" FontSize="17" Click="PassGenButton_OnClick"></Button>
+                            </Panel>
+                    </TabItem>
              </TabControl>
         </Grid>
-</StackPanel>
-
-        <!-- <Design.DataContext>
-        This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) 
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>-->
 </Window>
+
