@@ -13,7 +13,7 @@
                         <Image Source="/Assets/gg.ico" Width="70" Height="70" Margin="-580 -335 0 0"></Image>
                         <TextBlock Text="Gaming Generation" HorizontalAlignment="Center" Margin="-250 35 0 0" FontWeight="Bold" FontFamily="Motiva Sans" FontSize="20" Foreground="White" Background="#171d25" ></TextBlock>
                         <TextBlock Text="ВОЙДИТЕ, ИСПОЛЬЗУЯ СВОЁ ИМЯ" HorizontalAlignment="Center" Margin="0 150 0 0" FontFamily="Motiva Sans" FontSize="16" Foreground="#1d99ff" ></TextBlock>
-                        <TextBox Watermark="Ваше имя здесь" FontFamily="Motiva Sans" Margin="0 0 0 0" Foreground="White"  Height="40" Width="250" Background="#393c44" VerticalContentAlignment="Center" ></TextBox>
+                        <TextBox Name="NameTextBox" Watermark="Ваше имя здесь" FontFamily="Motiva Sans" Margin="0 0 0 0" Foreground="White"  Height="40" Width="250" Background="#393c44" VerticalContentAlignment="Center" ></TextBox>
                         <Button Name="EnterButton" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Войти" Foreground="White" FontFamily="Motiva Sans" FontSize="18" HorizontalAlignment="Center" Width="250"  Margin="0 120 0 0" Background="#208cff" Click="EnterButton_OnClick"></Button>
                 </Panel>
         </Grid>

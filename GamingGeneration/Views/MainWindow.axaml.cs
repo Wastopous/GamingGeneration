@@ -1,7 +1,9 @@
 using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 
@@ -9,7 +11,7 @@ namespace GamingGeneration.Views;
 
 public partial class MainWindow : Window
 {
-
+    private readonly string enteredName;
     public MainWindow()
     {
         InitializeComponent();
@@ -17,9 +19,9 @@ public partial class MainWindow : Window
         PassGenButton = this.FindControl<Button>("PassGenButton");
         PassTextBox = this.FindControl<TextBox>("PassTextBox");
     }
+
     private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
-
         var enterWindow = new EnterWindow();
         enterWindow.Show();
     }
@@ -28,7 +30,7 @@ public partial class MainWindow : Window
     private async void PassGenButton_OnClick(object? sender, RoutedEventArgs e)
     {
         PassGenButton.Background = new SolidColorBrush(Color.Parse("#3083df"));
-        PassGenButton.Content = "ГЕНЕРАЦИЯ";
+        PassGenButton.Content = "\u27f3  ГЕНЕРАЦИЯ";
         await Task.Delay(TimeSpan.FromSeconds(1));
         string passGen = GeneratePassword();
         PassTextBox.Text = passGen;
@@ -61,4 +63,27 @@ public partial class MainWindow : Window
 
         return pass.ToString();
     }
+
+    private async void NikGenButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        NikGenButton.Background = new SolidColorBrush(Color.Parse("#3083df"));
+        NikGenButton.Content = "\u27f3  ГЕНЕРАЦИЯ";
+        await Task.Delay(TimeSpan.FromSeconds(1));
+        NikGenButton.Content = "\u25b6  СГЕНЕРИРОВАТЬ ПАРОЛЬ";
+        NikGenButton.Background = new SolidColorBrush(Color.Parse("#6dd51f"));
+    }
+
+    
+    private string GetRandomDigits(int count)
+    {
+        Random random = new Random();
+        string digits = "";
+        for (int i = 0; i < count; i++)
+        {
+            digits += random.Next(10).ToString();
+        }
+        return digits;
+    }
+
+
 }
