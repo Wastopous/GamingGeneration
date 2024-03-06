@@ -16,7 +16,7 @@ public partial class EnterWindow : Window
     private void EnterButton_OnClick(object? sender, RoutedEventArgs e)
     {
         string enteredName = NameTextBox.Text;
-        var mainWindow = new MainWindow();
+        var mainWindow = new MainWindow(enteredName);
         this.Hide();
         mainWindow.Show();
     }

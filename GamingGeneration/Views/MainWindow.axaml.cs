@@ -12,9 +12,11 @@ namespace GamingGeneration.Views;
 public partial class MainWindow : Window
 {
     private readonly string enteredName;
-    public MainWindow()
+    public MainWindow(string textEnteredName)
     {
         InitializeComponent();
+        enteredName = textEnteredName;
+        NameTabItem.Header = enteredName;
         this.Closing += MainWindow_Closing;
         PassGenButton = this.FindControl<Button>("PassGenButton");
         PassTextBox = this.FindControl<TextBox>("PassTextBox");
