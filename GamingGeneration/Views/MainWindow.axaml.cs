@@ -16,7 +16,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         enteredName = textEnteredName;
-        NameTabItem.Header = enteredName;
+        NameTabItem.Header = enteredName.ToUpper();
         this.Closing += MainWindow_Closing;
         PassGenButton = this.FindControl<Button>("PassGenButton");
         PassTextBox = this.FindControl<TextBox>("PassTextBox");
@@ -32,6 +32,7 @@ public partial class MainWindow : Window
     private async void PassGenButton_OnClick(object? sender, RoutedEventArgs e)
     {
         PassGenButton.Background = new SolidColorBrush(Color.Parse("#3083df"));
+        PassTextBox.Text = "";
         PassGenButton.Content = "\u27f3  ГЕНЕРАЦИЯ";
         await Task.Delay(TimeSpan.FromSeconds(1));
         string passGen = GeneratePassword();
@@ -69,23 +70,14 @@ public partial class MainWindow : Window
     private async void NikGenButton_OnClick(object? sender, RoutedEventArgs e)
     {
         NikGenButton.Background = new SolidColorBrush(Color.Parse("#3083df"));
+        NikTextBox.Text = "";
         NikGenButton.Content = "\u27f3  ГЕНЕРАЦИЯ";
         await Task.Delay(TimeSpan.FromSeconds(1));
+        NikTextBox.Text = "Дон Симон";
+        SaveButton.IsVisible = true;
         NikGenButton.Content = "\u25b6  СГЕНЕРИРОВАТЬ ПАРОЛЬ";
         NikGenButton.Background = new SolidColorBrush(Color.Parse("#6dd51f"));
     }
-
     
-    private string GetRandomDigits(int count)
-    {
-        Random random = new Random();
-        string digits = "";
-        for (int i = 0; i < count; i++)
-        {
-            digits += random.Next(10).ToString();
-        }
-        return digits;
-    }
-
 
 }
