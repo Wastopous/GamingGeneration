@@ -44,7 +44,7 @@
                                     </Style>
                             </TabItem.Styles>
                             <Panel Name="PassPanel" >
-                                    <TextBlock Text="ПРОСТО НАЖМИТЕ НА КНОПКУ И ВАМ БУДЕТ СГЕНЕРИРОВАТЬ НАДЁЖНЫЙ ПАРОЛЬ" HorizontalAlignment="Center" Margin="0 -250 0 0" FontFamily="Motiva Sans" FontSize="16" Foreground="#1d99ff" ></TextBlock>
+                                    <TextBlock Text="ПРОСТО НАЖМИТЕ НА КНОПКУ И ВАМ БУДЕТ СГЕНЕРИРОВАТЬ НАДЁЖНЫЙ ПАРОЛЬ" IsVisible="True" HorizontalAlignment="Center" Margin=" 0 77 0 0" FontFamily="Motiva Sans" FontSize="16" Foreground="#1d99ff" ></TextBlock>
                                     <TextBox Name="PassTextBox"  Watermark="Пароль будет тут" IsReadOnly="True" HorizontalContentAlignment="Center"  HorizontalAlignment="Center" Height="40" Width="260" BorderBrush="#ffffff" FontFamily="Motiva Sans" FontSize="20" Foreground="White" Margin="0  -340 0 0"></TextBox> 
                                     <Button Name="PassGenButton" Content="▶  СГЕНЕРИРОВАТЬ ПАРОЛЬ" Focusable="False" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="300" FontWeight="Bold" Height="46" Margin="0  -230 0 0" Foreground="#ffffff"  Background="#6dd51f"  FontFamily="Motiva Sans" FontSize="17" Click="PassGenButton_OnClick"></Button>
                                     <Panel Name="PassSavePanel" IsVisible="False" VerticalAlignment="Center"  HorizontalAlignment="Center">

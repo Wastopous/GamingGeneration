@@ -84,7 +84,6 @@ public partial class MainWindow : Window
         await Task.Delay(TimeSpan.FromSeconds(1));
         string nikGen = GenerateNickName();
         NikTextBox.Text = nikGen;
-        NikSaveEditPanel.IsVisible = true;
         NikGenButton.Content = "\u25b6  СГЕНЕРИРОВАТЬ ПАРОЛЬ";
         NikSaveEditPanel.IsVisible = true;
         NikGenButton.Background = new SolidColorBrush(Color.Parse("#6dd51f"));
@@ -124,6 +123,7 @@ public partial class MainWindow : Window
 
     private void NikTextBox_OnTextChanging(object? sender, TextChangingEventArgs e)
     {
+        NikSaveEditPanel.IsVisible = true;
         NikGenButton.IsEnabled = true;
         ErrorLabel.IsVisible = false;
     }
