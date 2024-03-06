@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -7,11 +8,12 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 
+
 namespace GamingGeneration.Views;
 
 public partial class MainWindow : Window
 {
-    private readonly string enteredName;
+    private  string enteredName;
     public MainWindow(string textEnteredName)
     {
         InitializeComponent();
@@ -37,6 +39,7 @@ public partial class MainWindow : Window
         await Task.Delay(TimeSpan.FromSeconds(1));
         string passGen = GeneratePassword();
         PassTextBox.Text = passGen;
+        PassSavePanel.IsVisible = true;
         PassGenButton.Content = "\u25b6  СГЕНЕРИРОВАТЬ ПАРОЛЬ";
         PassGenButton.Background = new SolidColorBrush(Color.Parse("#6dd51f"));
     }
@@ -69,15 +72,60 @@ public partial class MainWindow : Window
 
     private async void NikGenButton_OnClick(object? sender, RoutedEventArgs e)
     {
+        string inputText = nikTextBox.Text;
+        if (string.IsNullOrEmpty(inputText))
+        {
+            ErrorLabel.IsVisible = true;
+            NikSaveEditPanel.IsVisible = false;
+        }
         NikGenButton.Background = new SolidColorBrush(Color.Parse("#3083df"));
         NikTextBox.Text = "";
         NikGenButton.Content = "\u27f3  ГЕНЕРАЦИЯ";
         await Task.Delay(TimeSpan.FromSeconds(1));
-        NikTextBox.Text = "Дон Симон";
-        SaveButton.IsVisible = true;
+        string nikGen = GenerateNickName();
+        NikTextBox.Text = nikGen;
+        NikSaveEditPanel.IsVisible = true;
         NikGenButton.Content = "\u25b6  СГЕНЕРИРОВАТЬ ПАРОЛЬ";
+        NikSaveEditPanel.IsVisible = true;
         NikGenButton.Background = new SolidColorBrush(Color.Parse("#6dd51f"));
     }
-    
 
+    private string GenerateNickName()
+    {
+        string inputText = nikTextBox.Text;
+
+        Random r = new Random();
+        StringBuilder result = new StringBuilder();
+
+        foreach (char character in inputText)
+        {
+            if (char.IsLetter(character))
+            {
+                result.Append(r.Next(2) == 0 ? char.ToUpper(character) : character);
+            }
+            else if (char.IsWhiteSpace(character))
+            {
+                result.Append('_');
+            }
+        }
+        return result.ToString();
+    }
+
+
+    private void NikEditButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        NikTextBox.IsReadOnly = false;
+    }
+
+    private void NikSaveButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        NikTextBox.IsReadOnly = true;
+    }
+
+    private void NikTextBox_OnTextChanging(object? sender, TextChangingEventArgs e)
+    {
+        NikGenButton.IsEnabled = true;
+        ErrorLabel.IsVisible = false;
+    }
+    
 }

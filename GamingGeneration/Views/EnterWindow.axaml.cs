@@ -19,7 +19,7 @@ public partial class EnterWindow : Window
         string enteredName = NameTextBox.Text;
         if (string.IsNullOrWhiteSpace(enteredName) || !IsLetter(enteredName))
         {
-            ShowError("у вас не может быть такое имя");
+            ShowError();
             return;
         }
         var mainWindow = new MainWindow(enteredName);
@@ -31,7 +31,7 @@ public partial class EnterWindow : Window
         return System.Text.RegularExpressions.Regex.IsMatch(input, @"[a-zA-Zа-яА-Я]+$");
     }
 
-    private void ShowError(string уваснеможетбытьтакоеимя)
+    private void ShowError()
     {
         ErrorLabel.IsVisible = true;
     }
