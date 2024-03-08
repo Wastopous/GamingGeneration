@@ -131,9 +131,11 @@ public partial class MainWindow : Window
 
     private void NikTextBox_OnKeyDown(object? sender, KeyEventArgs e)
     {
-        if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || (e.Key >= Key.OemMinus  && e.Key >= Key.OemPlus))
+        if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || (e.Key == Key.OemMinus  && e.Key == Key.OemPlus))
         {
             e.Handled = true;
         }
     }
+
+
 }
