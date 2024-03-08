@@ -77,6 +77,7 @@ public partial class MainWindow : Window
         {
             ErrorLabel.IsVisible = true;
             NikSaveEditPanel.IsVisible = false;
+
         }
         NikGenButton.Background = new SolidColorBrush(Color.Parse("#3083df"));
         NikTextBox.Text = "";
@@ -127,5 +128,12 @@ public partial class MainWindow : Window
         NikGenButton.IsEnabled = true;
         ErrorLabel.IsVisible = false;
     }
-    
+
+    private void NikTextBox_OnKeyDown(object? sender, KeyEventArgs e)
+    {
+        if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || (e.Key >= Key.OemMinus  && e.Key >= Key.OemPlus))
+        {
+            e.Handled = true;
+        }
+    }
 }
