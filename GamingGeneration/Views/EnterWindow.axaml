@@ -4,20 +4,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="430"
         x:Class="GamingGeneration.EnterWindow"
-        Title="GamingGeneration" 
+        Title="GamingGeneration"
         Icon="/Assets/gg.ico"
         Width="700"
         Height="430"
         CanResize="False"
         WindowStartupLocation="CenterScreen">
-        <Grid Background="#171d25">
-                <Panel>
-                        <Image Source="/Assets/gg.ico" Width="70" Height="70" Margin="-580 -335 0 0"></Image>
-                        <TextBlock Text="Gaming Generation" HorizontalAlignment="Center" Margin="-250 35 0 0" FontWeight="Bold" FontFamily="Motiva Sans" FontSize="20" Foreground="White" Background="#171d25" ></TextBlock>
-                        <TextBlock Text="ВОЙДИТЕ, ИСПОЛЬЗУЯ СВОЁ ИМЯ" HorizontalAlignment="Center" Margin="0 150 0 0" FontFamily="Motiva Sans" FontSize="16" Foreground="#1d99ff" ></TextBlock>
-                        <Label Name="ErrorLabel" Content = "НЕКОРРЕКТНЫЙ ВВОД!" HorizontalAlignment="Center" Height="24" Background="Transparent" Foreground="Red" FontSize="13" FontFamily="Motiva Sans" Margin="0 -65 0 0"  IsVisible="False" ></Label>
-                        <TextBox Name="NameTextBox" Watermark="Ваше имя здесь" KeyDown="NameTextBox_OnKeyDown" FontFamily="Motiva Sans" Margin="0 0 0 0" Foreground="White"  Height="40" Width="250" Background="#393c44" VerticalContentAlignment="Center" TextChanging="NameTextBox_OnTextChanging"></TextBox>
-                        <Button Name="EnterButton" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Войти" Foreground="White" FontFamily="Motiva Sans" FontSize="18" HorizontalAlignment="Center" Width="250"  Margin="0 120 0 0" Background="#208cff" Click="EnterButton_OnClick"></Button>
-                </Panel>
-        </Grid>
+    <Window.Styles>
+        <Style Selector="Button.underline">
+            <Style Selector="^ AccessText">
+                <Setter Property="TextDecorations" Value="Underline" />
+            </Style>
+        </Style>
+    </Window.Styles>
+    <Grid Background="#171d25">
+        <Panel>
+            <Image Source="/Assets/gg.ico" Width="70" Height="70" Margin="-580 -335 0 0"></Image>
+            <TextBlock Text="Gaming Generation" 
+                       HorizontalAlignment="Center" 
+                       Margin="-250 35 0 0" 
+                       FontWeight="Bold"
+                       FontFamily="Motiva Sans" 
+                       FontSize="20" 
+                       Foreground="White" 
+                       Background="#171d25">
+            </TextBlock>
+            <TextBlock Text="ВОЙДИТЕ, ИСПОЛЬЗУЯ СВОЁ ИМЯ" HorizontalAlignment="Center" Margin="0 150 0 0"
+                       FontFamily="Motiva Sans" FontSize="16" Foreground="#1d99ff">
+            </TextBlock>
+            <Label Name="ErrorLabel" Content="НЕКОРРЕКТНЫЙ ВВОД!" HorizontalAlignment="Center" Height="24"
+                   Background="Transparent" Foreground="Red" FontSize="13" FontFamily="Motiva Sans" Margin="0 -65 0 0"
+                   IsVisible="False">
+            </Label>
+            <TextBox Name="NameTextBox" Watermark="Ваше имя здесь" KeyDown="NameTextBox_OnKeyDown"
+                     FontFamily="Motiva Sans" Margin="0 0 0 0" Foreground="White" Height="40" Width="250"
+                     Background="#393c44" VerticalContentAlignment="Center" TextChanging="NameTextBox_OnTextChanging">
+            </TextBox>
+            <Button Name="EnterButton" 
+                    Height="50" 
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center" 
+                    Content="Войти" 
+                    Foreground="White" 
+                    FontFamily="Motiva Sans"
+                    FontSize="18" 
+                    HorizontalAlignment="Center" 
+                    Width="250" Margin="0 120 0 0" 
+                    Background="#208cff"
+                    Click="EnterButton_OnClick">
+            </Button>
+            <Button Name="RegLabel"
+                    HorizontalAlignment="Center"
+                   Content="Не могу войти"
+                   Background="Transparent"
+                   Margin="0 200 0 0"
+                   FontFamily="Motiva Sans"
+                   Classes="underline"
+                   FontSize="13"
+                   Click="RegLabel_OnClick"
+                   ></Button>
+        </Panel>
+    </Grid>
 </Window>

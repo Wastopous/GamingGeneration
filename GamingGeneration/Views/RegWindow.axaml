@@ -4,6 +4,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="GamingGeneration.Views.RegWindow"
-        Title="RegWindow">
-
+        Title="RegWindow"
+        Height="450"
+        Width="800"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Panel>
+            <TextBlock 
+                       Margin="0 30 0 0" 
+                       HorizontalAlignment="Center"
+                       Text="СОЗДАНИЕ АККАНТА"
+                       FontWeight="UltraLight" 
+                       FontFamily="Motiva Sans"
+                       FontSize="35" 
+                       Foreground="#ffffff">
+            </TextBlock>
+            
+        </Panel>
+    </Grid>
 </Window>
