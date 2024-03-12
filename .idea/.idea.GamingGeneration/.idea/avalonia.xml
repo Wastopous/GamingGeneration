@@ -3,9 +3,12 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+<<<<<<< HEAD
         <entry key="GamingGeneration/App.axaml" value="GamingGeneration/GamingGeneration.csproj" />
         <entry key="GamingGeneration/EnterWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />
         <entry key="GamingGeneration/Views/EnterUC.axaml" value="GamingGeneration/GamingGeneration.csproj" />
+=======
+>>>>>>> origin/master
         <entry key="GamingGeneration/Views/EnterWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />
         <entry key="GamingGeneration/Views/MainWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />
         <entry key="GamingGeneration/Views/RegWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />

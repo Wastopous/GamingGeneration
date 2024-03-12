@@ -23,7 +23,7 @@ public partial class EnterWindow : Window
             return;
         }
         var mainWindow = new MainWindow(enteredName);
-        this.Hide();
+        this.Close();
         mainWindow.Show();
     }
     private bool IsLetter(string input)
@@ -48,5 +48,12 @@ public partial class EnterWindow : Window
         {
             e.Handled = true;
         }
+    }
+
+
+    private void RegLabel_OnClick(object? sender, RoutedEventArgs e) {
+        var regWindow = new RegWindow();
+        regWindow.Show();
+        this.Close();
     }
 }
