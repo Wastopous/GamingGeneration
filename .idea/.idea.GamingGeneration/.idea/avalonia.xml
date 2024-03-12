@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="GamingGeneration/App.axaml" value="GamingGeneration/GamingGeneration.csproj" />
+        <entry key="GamingGeneration/EnterWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />
+        <entry key="GamingGeneration/Views/EnterUC.axaml" value="GamingGeneration/GamingGeneration.csproj" />
+        <entry key="GamingGeneration/Views/EnterWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />
+        <entry key="GamingGeneration/Views/MainWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />
+        <entry key="GamingGeneration/Views/RegWindow.axaml" value="GamingGeneration/GamingGeneration.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
