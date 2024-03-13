@@ -6,7 +6,7 @@
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="700"
         x:Class="GamingGeneration.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/gg.ico"
+        Icon="/Assets/gg.png"
         Title="GamingGeneration"
         Width="1000"
         Height="700"

@@ -24,7 +24,7 @@ public partial class EnterWindow : Window
         }
 
         var mainWindow = new MainWindow(enteredName);
-        this.Close();
+        this.Hide();
         mainWindow.Show();
     }
 
