@@ -17,115 +17,130 @@
 
 
             <!--Ник-->
-            <TabItem Name="NickTabItem" Header="НИКНЕЙМ" Width="130" HorizontalContentAlignment="Center"
-                     FontFamily="Motiva Sans" FontSize="20" Background="#171d25">
+            <TabItem
+                Name="NickTabItem"
+                Header="НИКНЕЙМ"
+                Width="130"
+                HorizontalContentAlignment="Center"
+                FontFamily="Motiva Sans"
+                FontSize="20"
+                Background="#171d25">
                 <TabItem.Styles>
                     <Style Selector="TabItem:selected">
                         <Setter Property="Foreground" Value="#188EE3"></Setter>
                     </Style>
                 </TabItem.Styles>
                 <Panel Name="NickPanel" VerticalAlignment="Center">
-                    <TextBlock Text="ВВЕДИТЕ ФРАЗУ НА ОСНОВЕ КОТОРОЙ БУДЕТ СГЕНЕРИРОВАН НИК"
-                               HorizontalAlignment="Center"
-                               Margin="0 -250 0 0"
-                               FontFamily="Motiva Sans"
-                               FontSize="16"
-                               Foreground="#1d99ff">
+                    <TextBlock
+                        Text="ВВЕДИТЕ ФРАЗУ НА ОСНОВЕ КОТОРОЙ БУДЕТ СГЕНЕРИРОВАН НИК"
+                        HorizontalAlignment="Center"
+                        Margin="0 -250 0 0"
+                        FontFamily="Motiva Sans"
+                        FontSize="16"
+                        Foreground="#1d99ff">
                     </TextBlock>
-                    <TextBox Name="nikTextBox"
-                             KeyDown="NikTextBox_OnKeyDown"
-                             Watermark="Введите фразу сюда"
-                             TextChanging="NikTextBox_OnTextChanging"
-                             BorderBrush="#ffffff"
-                             FontFamily="Motiva Sans"
-                             FontSize="20"
-                             Foreground="White"
-                             HorizontalContentAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             HorizontalAlignment="Center"
-                             Height="40"
-                             Width="260"
-                             Background="#171d25"
-                             Margin="0,-340,0,0">
+                    <TextBox
+                        Name="nikTextBox"
+                        KeyDown="NikTextBox_OnKeyDown"
+                        Watermark="Введите фразу сюда"
+                        TextChanging="NikTextBox_OnTextChanging"
+                        BorderBrush="#ffffff"
+                        FontFamily="Motiva Sans"
+                        FontSize="20"
+                        Foreground="White"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Height="40"
+                        Width="260"
+                        Background="#171d25"
+                        Margin="0,-340,0,0">
                     </TextBox>
-                    <TextBox Name="NikTextBox"
-                             Watermark="Ник будет тут"
-                             IsReadOnly="True"
-                             BorderBrush="#ffffff"
-                             FontFamily="Motiva Sans"
-                             FontSize="20"
-                             Foreground="White"
-                             HorizontalContentAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             HorizontalAlignment="Center"
-                             Height="40"
-                             Width="260"
-                             Background="#171d25"
-                             Margin="0  -240 0 0">
+                    <TextBox
+                        Name="NikTextBox"
+                        Watermark="Ник будет тут"
+                        IsReadOnly="True"
+                        BorderBrush="#ffffff"
+                        FontFamily="Motiva Sans"
+                        FontSize="20"
+                        Foreground="White"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Height="40"
+                        Width="260"
+                        Background="#171d25"
+                        Margin="0  -240 0 0">
                     </TextBox>
-                    <Panel Name="NikSaveEditPanel"
-                           IsVisible="False"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center">
-                        <Button Name="NikSaveButton"
-                                Margin="0 -30 0 0 "
-                                Height="30"
-                                Content="Сохранить никнейм"
-                                FontFamily="Motiva Sans"
-                                FontSize="12"
-                                Background="#3e4752"
-                                Foreground="#969faa"
-                                Click="NikSaveButton_OnClick">
+                    <Panel
+                        Name="NikSaveEditPanel"
+                        IsVisible="False"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Button
+                            Name="NikSaveButton"
+                            Margin="0 -30 0 0 "
+                            Height="30"
+                            Content="Сохранить никнейм"
+                            FontFamily="Motiva Sans"
+                            FontSize="12"
+                            Background="#3e4752"
+                            Foreground="#969faa"
+                            Click="NikSaveButton_OnClick">
                         </Button>
-                        <Button Name="NikEditButton"
-                                Margin="140,-30,0,0 "
-                                Height="30"
-                                Content="Корректировать"
-                                FontFamily="Motiva Sans"
-                                FontSize="12"
-                                Background="#3e4752"
-                                Foreground="#969faa"
-                                Click="NikEditButton_OnClick">
+                        <Button
+                            Name="NikEditButton"
+                            Margin="140,-30,0,0 "
+                            Height="30"
+                            Content="Корректировать"
+                            FontFamily="Motiva Sans"
+                            FontSize="12"
+                            Background="#3e4752"
+                            Foreground="#969faa"
+                            Click="NikEditButton_OnClick">
                         </Button>
                     </Panel>
-                    <Label Name="ErrorLabel"
-                           Content="НЕКОРРЕКТНЫЙ ВВОД!"
-                           HorizontalAlignment="Center"
-                           Height="24"
-                           Background="Transparent"
-                           Foreground="Red"
-                           FontSize="13"
-                           FontFamily="Motiva Sans"
-                           Margin="0,-400,0,0"
-                           IsVisible="False">
+                    <Label
+                        Name="ErrorLabel"
+                        Content="НЕКОРРЕКТНЫЙ ВВОД!"
+                        HorizontalAlignment="Center"
+                        Height="24"
+                        Background="Transparent"
+                        Foreground="Red"
+                        FontSize="13"
+                        FontFamily="Motiva Sans"
+                        Margin="0,-400,0,0"
+                        IsVisible="False">
                     </Label>
-                    <Button Name="NikGenButton"
-                            IsEnabled="False"
-                            Content="▶  СГЕНЕРИРОВАТЬ НИКНЕЙМ"
-                            Focusable="False"
-                            HorizontalContentAlignment="Center"
-                            HorizontalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Width="300"
-                            FontWeight="Bold"
-                            Height="46"
-                            Margin="0  -130 0 0"
-                            Foreground="#ffffff"
-                            Background="#6dd51f"
-                            FontFamily="Motiva Sans"
-                            FontSize="17"
-                            Click="NikGenButton_OnClick">
+                    <Button
+                        Name="NikGenButton"
+                        IsEnabled="False"
+                        Content="▶  СГЕНЕРИРОВАТЬ НИКНЕЙМ"
+                        Focusable="False"
+                        HorizontalContentAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Width="300"
+                        FontWeight="Bold"
+                        Height="46"
+                        Margin="0  -130 0 0"
+                        Foreground="#ffffff"
+                        Background="#6dd51f"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Click="NikGenButton_OnClick">
                     </Button>
                 </Panel>
             </TabItem>
 
             <!--Пароль-->
-            <TabItem Name="PassTabItem"
-                     Header="ПАРОЛЬ" Width="110"
-                     HorizontalContentAlignment="Center"
-                     FontFamily="Motiva Sans"
-                     FontSize="20"
-                     Background="#171d25">
+            <TabItem
+                Name="PassTabItem"
+                Header="ПАРОЛЬ" Width="110"
+                HorizontalContentAlignment="Center"
+                FontFamily="Motiva Sans"
+                FontSize="20"
+                Background="#171d25">
                 <TabItem.Styles>
                     <Style Selector="TabItem:selected">
                         <Setter
@@ -135,66 +150,72 @@
                     </Style>
                 </TabItem.Styles>
                 <Panel Name="PassPanel">
-                    <TextBlock Text="ПРОСТО НАЖМИТЕ НА КНОПКУ И ВАМ БУДЕТ СГЕНЕРИРОВАТЬ НАДЁЖНЫЙ ПАРОЛЬ"
-                               IsVisible="True"
-                               HorizontalAlignment="Center"
-                               Margin=" 0 77 0 0"
-                               FontFamily="Motiva Sans"
-                               FontSize="16"
-                               Foreground="#1d99ff">
+                    <TextBlock
+                        Text="ПРОСТО НАЖМИТЕ НА КНОПКУ И ВАМ БУДЕТ СГЕНЕРИРОВАТЬ НАДЁЖНЫЙ ПАРОЛЬ"
+                        IsVisible="True"
+                        HorizontalAlignment="Center"
+                        Margin=" 0 77 0 0"
+                        FontFamily="Motiva Sans"
+                        FontSize="16"
+                        Foreground="#1d99ff">
                     </TextBlock>
-                    <TextBox Name="PassTextBox"
-                             Watermark="Пароль будет тут"
-                             IsReadOnly="True"
-                             HorizontalContentAlignment="Center"
-                             HorizontalAlignment="Center"
-                             Height="40"
-                             Width="260"
-                             BorderBrush="#ffffff"
-                             FontFamily="Motiva Sans"
-                             FontSize="20"
-                             Foreground="White"
-                             Margin="0  -340 0 0">
+                    <TextBox
+                        Name="PassTextBox"
+                        Watermark="Пароль будет тут"
+                        IsReadOnly="True"
+                        HorizontalContentAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Height="40"
+                        Width="260"
+                        BorderBrush="#ffffff"
+                        FontFamily="Motiva Sans"
+                        FontSize="20"
+                        Foreground="White"
+                        Margin="0  -340 0 0">
                     </TextBox>
-                    <Button Name="PassGenButton"
-                            Content="▶  СГЕНЕРИРОВАТЬ ПАРОЛЬ"
-                            Focusable="False"
-                            HorizontalContentAlignment="Center"
-                            HorizontalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Width="300"
-                            FontWeight="Bold"
-                            Height="46"
-                            Margin="0  -230 0 0"
-                            Foreground="#ffffff"
-                            Background="#6dd51f"
-                            FontFamily="Motiva Sans"
-                            FontSize="17"
-                            Click="PassGenButton_OnClick">
+                    <Button
+                        Name="PassGenButton"
+                        Content="▶  СГЕНЕРИРОВАТЬ ПАРОЛЬ"
+                        Focusable="False"
+                        HorizontalContentAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Width="300"
+                        FontWeight="Bold"
+                        Height="46"
+                        Margin="0  -230 0 0"
+                        Foreground="#ffffff"
+                        Background="#6dd51f"
+                        FontFamily="Motiva Sans"
+                        FontSize="17"
+                        Click="PassGenButton_OnClick">
                     </Button>
-                    <Panel Name="PassSavePanel"
-                           IsVisible="False"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center">
-                        <Button Name="PassSaveButton"
-                                Margin="0 -120 0 0 "
-                                Height="30"
-                                Content="Сохранить пароль"
-                                FontFamily="Motiva Sans"
-                                FontSize="12"
-                                Background="#3e4752"
-                                Foreground="#969faa"
-                                Click="PassSaveButton_OnClick">
+                    <Panel
+                        Name="PassSavePanel"
+                        IsVisible="False"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Button
+                            Name="PassSaveButton"
+                            Margin="0 -120 0 0 "
+                            Height="30"
+                            Content="Сохранить пароль"
+                            FontFamily="Motiva Sans"
+                            FontSize="12"
+                            Background="#3e4752"
+                            Foreground="#969faa"
+                            Click="PassSaveButton_OnClick">
                         </Button>
                     </Panel>
                 </Panel>
             </TabItem>
 
             <!--ГГ-->
-            <TabItem Name="NameTabItem"
-                     FontSize="20"
-                     FontFamily="Motiva Sans"
-                     Background="#171d25">
+            <TabItem
+                Name="NameTabItem"
+                FontSize="20"
+                FontFamily="Motiva Sans"
+                Background="#171d25">
                 <TabItem.Styles>
                     <Style Selector="TabItem:selected">
                         <Setter
@@ -204,9 +225,44 @@
                     </Style>
                 </TabItem.Styles>
                 <Grid>
-                    <DataGrid Name="DataGrid" x:CompileBindings="False" IsReadOnly="True">
+                    <TextBlock
+                        Text="ЭТО ВАШ МЕНЕДЖЕР ПАРОЛЕЙ"
+                        IsVisible="True"
+                        HorizontalAlignment="Center"
+                        Margin=" 0 0 0 0"
+                        FontFamily="Motiva Sans"
+                        FontSize="24"
+                        Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBlock
+                        Text="самым первым всегда будет ваш никнейм а под ним находятся все пароли которые вы сохраняли"
+                        HorizontalAlignment="Center"
+                        Margin=" 0 30 0 0"
+                        FontFamily="Motiva Sans"
+                        FontSize="18"
+                        Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBlock
+                        Text="не передавайте никому эту информацию и держите её в секрете от остальных это только ваша вкладка"
+                        HorizontalAlignment="Center"
+                        Margin=" 0 55 0 0"
+                        FontFamily="Motiva Sans"
+                        FontSize="15"
+                        Foreground="red">
+                    </TextBlock>
+                    <DataGrid
+                        Name="DataGrid"
+                        Margin="0 80 0  0"
+                        x:CompileBindings="False"
+                        IsReadOnly="True"
+                        AutoGenerateColumns="False"
+                        SelectionMode="Single"
+                        ClipboardCopyMode="ExcludeHeader">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding value}">
+                            <DataGridTextColumn
+                                Header="Ваш нинейм и пароли"
+                                CanUserSort="False"
+                                Binding="{Binding value}">
                             </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>

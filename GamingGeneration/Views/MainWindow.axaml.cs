@@ -205,4 +205,6 @@ public partial class MainWindow : Window
         user[enteredName].Add(new Credentials() { value = NikTextBox.Text });
         Save();
     }
+
+   
 }
