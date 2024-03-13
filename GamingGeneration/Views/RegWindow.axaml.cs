@@ -24,7 +24,7 @@ public partial class RegWindow : Window
             return;
         }
         var mainWindow = new MainWindow(enteredName);
-        this.Close();
+        this.Hide();
         mainWindow.Show();
     }
 
