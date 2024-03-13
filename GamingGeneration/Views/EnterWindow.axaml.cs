@@ -13,7 +13,7 @@ public partial class EnterWindow : Window
     {
         InitializeComponent();
     }
-    
+
     private void EnterButton_OnClick(object? sender, RoutedEventArgs e)
     {
         string enteredName = NameTextBox.Text;
@@ -22,10 +22,12 @@ public partial class EnterWindow : Window
             ShowError();
             return;
         }
+
         var mainWindow = new MainWindow(enteredName);
         this.Close();
         mainWindow.Show();
     }
+
     private bool IsLetter(string input)
     {
         return System.Text.RegularExpressions.Regex.IsMatch(input, @"[a-zA-Zа-яА-Я]+$");
@@ -44,14 +46,16 @@ public partial class EnterWindow : Window
 
     private void NameTextBox_OnKeyDown(object? sender, KeyEventArgs e)
     {
-        if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || (e.Key >= Key.OemMinus  && e.Key >= Key.OemPlus))
+        if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) ||
+            (e.Key >= Key.OemMinus && e.Key >= Key.OemPlus))
         {
             e.Handled = true;
         }
     }
 
 
-    private void RegLabel_OnClick(object? sender, RoutedEventArgs e) {
+    private void RegLabel_OnClick(object? sender, RoutedEventArgs e)
+    {
         var regWindow = new RegWindow();
         regWindow.Show();
         this.Close();

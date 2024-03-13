@@ -4,28 +4,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="GamingGeneration.Views.RegWindow"
-        Title="RegWindow"
+        Title="GamingGeneration"
         Height="450"
         Width="800"
         CanResize="False"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/gg.ico">
     <Window.Styles>
         <Style Selector="Button.underline">
             <Style Selector="^ AccessText">
-                <Setter Property="TextDecorations" Value="Underline" />
+                <Setter Property="TextDecorations"
+                        Value="Underline" />
             </Style>
         </Style>
     </Window.Styles>
     <Grid>
         <Panel>
-            <TextBlock
-                Margin="0 10 0 0"
-                HorizontalAlignment="Center"
-                Text="СОЗДАНИЕ АККАНТА"
-                FontWeight="UltraLight"
-                FontFamily="Motiva Sans"
-                FontSize="30"
-                Foreground="#ffffff">
+            <TextBlock Name="AccBlock"
+                       Margin="0 10 0 0"
+                       HorizontalAlignment="Center"
+                       Text="СОЗДАНИЕ АККАНТА"
+                       FontWeight="UltraLight"
+                       FontFamily="Motiva Sans"
+                       FontSize="30"
+                       Foreground="#ffffff">
             </TextBlock>
             <TextBlock Name="LoginBlock"
                        Margin="0 55 80 0"
@@ -43,8 +45,7 @@
                      Height="40"
                      Width="250"
                      Background="#393c44"
-                     VerticalContentAlignment="Center"
-                     KeyDown="LoginTextBox_OnKeyDown">
+                     VerticalContentAlignment="Center">
             </TextBox>
             <TextBlock Name="NameBlock"
                        Margin="0 120 100 0"
@@ -100,29 +101,29 @@
                      Background="#393c44"
                      VerticalContentAlignment="Center">
             </TextBox>
-            <Button
-                Name="RegButton"
-                Content="ЗАРЕГИСТРИРОВАТЬСЯ"
-                Height="50"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                Foreground="White"
-                FontFamily="Motiva Sans"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Width="250" Margin="0 200 0 -100"
-                Background="#208cff"
-                Click="RegButton_OnClick">
+            <Button Name="RegButton"
+                    Content="ЗАРЕГИСТРИРОВАТЬСЯ"
+                    Height="50"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Foreground="White"
+                    FontFamily="Motiva Sans"
+                    FontSize="18"
+                    HorizontalAlignment="Center"
+                    Width="250" Margin="0 200 0 -100"
+                    Background="#208cff"
+                    IsEnabled="False"
+                    Click="RegButton_OnClick">
             </Button>
-            <Button
-                HorizontalAlignment="Center"
-                Content="Уже зарегестрирован"
-                Background="Transparent"
-                Margin="0 220 0 0"
-                FontFamily="Motiva Sans"
-                Classes="underline"
-                FontSize="13">
-
+            <Button Name="EntButton"
+                    HorizontalAlignment="Center"
+                    Content="Уже зарегестрирован"
+                    Background="Transparent"
+                    Margin="0 220 0 0"
+                    FontFamily="Motiva Sans"
+                    Classes="underline"
+                    FontSize="13"
+                    Click="EntButton_OnClick">
             </Button>
         </Panel>
     </Grid>

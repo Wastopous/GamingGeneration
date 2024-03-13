@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System.Linq;
+using Avalonia;
 using Avalonia.Input;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -13,34 +14,38 @@ public partial class RegWindow : Window
     public RegWindow()
     {
         InitializeComponent();
+
     }
+
+
+    private void EntButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var enterwindow = new EnterWindow();
+        this.Hide();
+        enterwindow.Show();
+    }
+    
 
     private void RegButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        string enteredName = LoginTextBox.Text;
-        if (string.IsNullOrWhiteSpace(enteredName) || !IsLetter(enteredName))
+        
+    }
+    private bool HaveText()
+    {
+        bool haveText = !string.IsNullOrWhiteSpace(LoginTextBox.Text) &&
+                         !string.IsNullOrWhiteSpace(NameTextBox.Text) &&
+                         !string.IsNullOrWhiteSpace(SurNameTextBox.Text) &&
+                         !string.IsNullOrWhiteSpace(MidNameTextBox.Text);
+
+        if (!haveText)
         {
-            LoginShowError();
-            return;
+            RegButton.IsEnabled = false;
         }
-        var mainWindow = new MainWindow(enteredName);
-        this.Close();
-        mainWindow.Show();
-    }
+        else
+        {
+            RegButton.IsEnabled = true;
+        }
 
-    private bool IsLetter(string input)
-    {
-        return System.Text.RegularExpressions.Regex.IsMatch(input, @"[a-zA-Zа-яА-Я]+$");
-    }
-
-    private void LoginShowError()
-    {
-        LoginTextBox.Watermark = "НЕКОРРЕКТНЫЙ ВВОД!";
-        LoginTextBox.Foreground = Brushes.Red;
-    }
-
-    private void LoginTextBox_OnKeyDown(object? sender, KeyEventArgs e)
-    {
-        LoginTextBox.Foreground = Brushes.White;
+        return haveText;
     }
 }
