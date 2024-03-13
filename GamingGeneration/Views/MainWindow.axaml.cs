@@ -191,7 +191,9 @@ public partial class MainWindow : Window
             isPassword = true,
 
             value = PassTextBox.Text
+            
         });
+        PassSavePanel.IsVisible = false;
         Save();
     }
 
