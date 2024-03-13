@@ -72,7 +72,7 @@
                     Background="#208cff"
                     Click="EnterButton_OnClick">
             </Button>
-            <Button Name="RegLabel"
+           <!-- <Button Name="RegLabel"
                     HorizontalAlignment="Center"
                     Content="Не могу войти"
                     Background="Transparent"
@@ -81,7 +81,7 @@
                     Classes="underline"
                     FontSize="13"
                     Click="RegLabel_OnClick">
-            </Button>
+            </Button>-->
         </Panel>
     </Grid>
 </Window>

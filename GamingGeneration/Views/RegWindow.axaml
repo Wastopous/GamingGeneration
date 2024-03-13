@@ -43,8 +43,7 @@
                      Height="40"
                      Width="250"
                      Background="#393c44"
-                     VerticalContentAlignment="Center"
-                     KeyDown="LoginTextBox_OnKeyDown">
+                     VerticalContentAlignment="Center">
             </TextBox>
             <TextBlock Name="NameBlock"
                        Margin="0 120 100 0"

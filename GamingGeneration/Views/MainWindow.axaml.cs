@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Avalonia.Controls;
@@ -13,12 +16,49 @@ namespace GamingGeneration.Views;
 
 public partial class MainWindow : Window
 {
-    private  string enteredName;
+    public class Credentials
+    {
+        public string value { get; set; }
+        public bool isPassword { get; set; }
+    }
+
+    private void Save()
+    {
+        var serialize = JsonSerializer.Serialize(user);
+        File.WriteAllText("savefile", serialize);
+    }
+
+    private void Load()
+    {
+        string read = "{}";
+        if (File.Exists("savefile"))
+        {
+            read = File.ReadAllText("savefile");
+            if (string.IsNullOrEmpty(read))
+            {
+                read = "{}";
+            }
+        }
+
+        user = JsonSerializer.Deserialize<Dictionary<string, List<Credentials>>>(read);
+        if (!user.ContainsKey(enteredName))
+        {
+            user[enteredName] = new List<Credentials>();
+        }
+
+        DataGrid.ItemsSource = user?[enteredName];
+    }
+
+
+    public Dictionary<string, List<Credentials>>? user = new Dictionary<string, List<Credentials>>();
+    private string enteredName;
+
     public MainWindow(string textEnteredName)
     {
         InitializeComponent();
         enteredName = textEnteredName;
         NameTabItem.Header = enteredName.ToUpper();
+        Load();
         this.Closing += MainWindow_Closing;
         PassGenButton = this.FindControl<Button>("PassGenButton");
         PassTextBox = this.FindControl<TextBox>("PassTextBox");
@@ -54,17 +94,19 @@ public partial class MainWindow : Window
         StringBuilder pass = new StringBuilder();
         Random r = new Random();
 
-        
+
         for (int i = 0; i < 8; i++)
         {
             pass.Append(lowChars[r.Next(lowChars.Length)]);
         }
+
         pass.Append(upChars[r.Next(upChars.Length)]);
-        
+
         for (int i = 0; i < 3; i++)
         {
             pass.Append(dgChars[r.Next(dgChars.Length)]);
         }
+
         pass.Append(specChars[r.Next(specChars.Length)]);
 
         return pass.ToString();
@@ -77,8 +119,8 @@ public partial class MainWindow : Window
         {
             ErrorLabel.IsVisible = true;
             NikSaveEditPanel.IsVisible = false;
-
         }
+
         NikGenButton.Background = new SolidColorBrush(Color.Parse("#3083df"));
         NikTextBox.Text = "";
         NikGenButton.Content = "\u27f3  ГЕНЕРАЦИЯ";
@@ -108,6 +150,7 @@ public partial class MainWindow : Window
                 result.Append('_');
             }
         }
+
         return result.ToString();
     }
 
@@ -117,10 +160,6 @@ public partial class MainWindow : Window
         NikTextBox.IsReadOnly = false;
     }
 
-    private void NikSaveButton_OnClick(object? sender, RoutedEventArgs e)
-    {
-        NikTextBox.IsReadOnly = true;
-    }
 
     private void NikTextBox_OnTextChanging(object? sender, TextChangingEventArgs e)
     {
@@ -131,11 +170,39 @@ public partial class MainWindow : Window
 
     private void NikTextBox_OnKeyDown(object? sender, KeyEventArgs e)
     {
-        if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || (e.Key == Key.OemMinus  && e.Key == Key.OemPlus))
+        if ((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) ||
+            (e.Key == Key.OemMinus && e.Key == Key.OemPlus))
         {
             e.Handled = true;
         }
     }
 
 
+    private void PassSaveButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (!user.ContainsKey(enteredName))
+        {
+            user[enteredName] = new List<Credentials>();
+        }
+
+        user[enteredName].Add(new Credentials()
+        {
+            isPassword = true,
+
+            value = PassTextBox.Text
+        });
+        Save();
+    }
+
+    private void NikSaveButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        NikTextBox.IsReadOnly = true;
+        if (user.ContainsKey(enteredName))
+        {
+            user[enteredName] = new List<Credentials>();
+        }
+
+        user[enteredName].Add(new Credentials() { value = NikTextBox.Text });
+        Save();
+    }
 }
