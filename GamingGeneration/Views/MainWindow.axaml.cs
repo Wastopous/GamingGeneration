@@ -33,6 +33,7 @@ public partial class MainWindow : Window
         string read = "{}";
         if (File.Exists("savefile"))
         {
+            PassGenButton.IsEnabled = true;
             read = File.ReadAllText("savefile");
             if (string.IsNullOrEmpty(read))
             {
@@ -196,6 +197,7 @@ public partial class MainWindow : Window
 
     private void NikSaveButton_OnClick(object? sender, RoutedEventArgs e)
     {
+        PassGenButton.IsEnabled = true;
         NikTextBox.IsReadOnly = true;
         if (user.ContainsKey(enteredName))
         {

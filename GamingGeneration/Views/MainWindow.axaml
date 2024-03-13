@@ -34,10 +34,18 @@
                     <TextBlock
                         Text="ВВЕДИТЕ ФРАЗУ НА ОСНОВЕ КОТОРОЙ БУДЕТ СГЕНЕРИРОВАН НИК"
                         HorizontalAlignment="Center"
-                        Margin="0 -250 0 0"
+                        Margin="0,-265,0,0"
                         FontFamily="Motiva Sans"
                         FontSize="16"
                         Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBlock
+                        Text="чтобы кнопка генерации стала доступна нужно ввести текст в поле"
+                        HorizontalAlignment="Center"
+                        Margin=" 0 -235 0 0"
+                        FontFamily="Motiva Sans"
+                        FontSize="15"
+                        Foreground="red">
                     </TextBlock>
                     <TextBox
                         Name="nikTextBox"
@@ -154,10 +162,18 @@
                         Text="ПРОСТО НАЖМИТЕ НА КНОПКУ И ВАМ БУДЕТ СГЕНЕРИРОВАТЬ НАДЁЖНЫЙ ПАРОЛЬ"
                         IsVisible="True"
                         HorizontalAlignment="Center"
-                        Margin=" 0 77 0 0"
+                        Margin=" 0 70 0 0"
                         FontFamily="Motiva Sans"
                         FontSize="16"
                         Foreground="#1d99ff">
+                    </TextBlock>
+                    <TextBlock
+                        Text="пароль нельзя генерировать пока не сохраннён никнейм"
+                        HorizontalAlignment="Center"
+                        Margin=" 0,100,0,0"
+                        FontFamily="Motiva Sans"
+                        FontSize="15"
+                        Foreground="red">
                     </TextBlock>
                     <TextBox
                         Name="PassTextBox"
@@ -175,6 +191,7 @@
                     </TextBox>
                     <Button
                         Name="PassGenButton"
+                        IsEnabled="False"
                         Content="▶  СГЕНЕРИРОВАТЬ ПАРОЛЬ"
                         Focusable="False"
                         HorizontalContentAlignment="Center"
