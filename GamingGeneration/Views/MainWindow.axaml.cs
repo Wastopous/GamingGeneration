@@ -20,6 +20,7 @@ public partial class MainWindow : Window
     {
         public string value { get; set; }
         public bool isPassword { get; set; }
+        public bool isCode { get; set; }
     }
 
     private void Save()
@@ -33,7 +34,9 @@ public partial class MainWindow : Window
         string read = "{}";
         if (File.Exists("savefile"))
         {
-            PassGenButton.IsEnabled = true;
+            PassGenButton.IsVisible = true;
+            NameTabItem.IsVisible = true;
+            CodePanel.IsVisible = false;
             read = File.ReadAllText("savefile");
             if (string.IsNullOrEmpty(read))
             {
@@ -53,8 +56,9 @@ public partial class MainWindow : Window
 
     public Dictionary<string, List<Credentials>>? user = new Dictionary<string, List<Credentials>>();
     private string enteredName;
+    private int code;
 
-    public MainWindow(string textEnteredName)
+    public MainWindow(string textEnteredName )
     {
         InitializeComponent();
         enteredName = textEnteredName;
@@ -191,7 +195,6 @@ public partial class MainWindow : Window
             isPassword = true,
 
             value = PassTextBox.Text
-            
         });
         PassSavePanel.IsVisible = false;
         Save();
@@ -210,5 +213,27 @@ public partial class MainWindow : Window
         Save();
     }
 
-   
+
+    private void NameTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        this.Hide();
+        var secwin = new SecurityWindow();
+        secwin.Show();
+    }
+
+    private void CodeButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (!user.ContainsKey(enteredName))
+        {
+            user[enteredName] = new List<Credentials>();
+        }
+
+        user[enteredName].Add(new Credentials()
+        {
+            isCode = true,
+            value = CodeBox.Text
+        });
+        CodePanel.IsVisible = false;
+        Save();
+    }
 }
