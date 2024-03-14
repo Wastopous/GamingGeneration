@@ -16,9 +16,12 @@ namespace GamingGeneration.Views;
 
 public partial class MainWindow : Window
 {
+    #region filesaving
+
     public class Credentials
     {
         public string value { get; set; }
+        public static string? code { get; set; }
         public bool isPassword { get; set; }
         public bool isCode { get; set; }
     }
@@ -34,9 +37,9 @@ public partial class MainWindow : Window
         string read = "{}";
         if (File.Exists("savefile"))
         {
-            PassGenButton.IsVisible = true;
+            PassGenButton.IsEnabled = true;
             NameTabItem.IsVisible = true;
-            CodePanel.IsVisible = false;
+            CodePanel.IsVisible = true;
             read = File.ReadAllText("savefile");
             if (string.IsNullOrEmpty(read))
             {
@@ -51,14 +54,19 @@ public partial class MainWindow : Window
         }
 
         DataGrid.ItemsSource = user?[enteredName];
+        CodePanel.IsVisible = false;
     }
 
 
     public Dictionary<string, List<Credentials>>? user = new Dictionary<string, List<Credentials>>();
     private string enteredName;
-    private int code;
+    private string code;
 
-    public MainWindow(string textEnteredName )
+    #endregion
+
+    #region main
+
+    public MainWindow(string textEnteredName)
     {
         InitializeComponent();
         enteredName = textEnteredName;
@@ -69,12 +77,15 @@ public partial class MainWindow : Window
         PassTextBox = this.FindControl<TextBox>("PassTextBox");
     }
 
+    #endregion
+
+    #region generation
+
     private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
         var enterWindow = new EnterWindow();
         enterWindow.Show();
     }
-
 
     private async void PassGenButton_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -182,6 +193,9 @@ public partial class MainWindow : Window
         }
     }
 
+    #endregion
+
+    #region saving
 
     private void PassSaveButton_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -197,6 +211,7 @@ public partial class MainWindow : Window
             value = PassTextBox.Text
         });
         PassSavePanel.IsVisible = false;
+        CodePanel.IsVisible = true;
         Save();
     }
 
@@ -211,14 +226,16 @@ public partial class MainWindow : Window
 
         user[enteredName].Add(new Credentials() { value = NikTextBox.Text });
         Save();
+        NikSaveEditPanel.IsVisible = false;
     }
 
+    #endregion
+
+    #region account
 
     private void NameTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
-        this.Hide();
-        var secwin = new SecurityWindow();
-        secwin.Show();
+        CodeGrid.IsVisible = true;
     }
 
     private void CodeButton_OnClick(object? sender, RoutedEventArgs e)
@@ -227,13 +244,17 @@ public partial class MainWindow : Window
         {
             user[enteredName] = new List<Credentials>();
         }
-
-        user[enteredName].Add(new Credentials()
-        {
-            isCode = true,
-            value = CodeBox.Text
-        });
+        Credentials.code = CodeBox.Text;
         CodePanel.IsVisible = false;
-        Save();
+    }
+
+    #endregion
+
+    private void CheckCodeButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        if (!string.IsNullOrEmpty(CodeTextBox.Text = Credentials.code))
+        {
+            CodeGrid.IsVisible = false;
+        }
     }
 }

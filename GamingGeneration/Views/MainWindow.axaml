@@ -18,7 +18,7 @@
 
             <!--Ник-->
             <TabItem
-                
+
                 Name="NickTabItem"
                 Header="НИКНЕЙМ"
                 Width="130"
@@ -226,8 +226,7 @@
                         </Button>
                     </Panel>
                     <Panel
-                        Name="CodePanel"
-                        >
+                        Name="CodePanel">
                         <TextBlock
                             Text="СЮДА ВВЕДИТЕ СВОЙ КОД ДЛЯ ВХОДА В МЕНЕДЖЕР ПАРОЛЕЙ"
                             HorizontalAlignment="Center"
@@ -236,7 +235,7 @@
                             FontSize="16"
                             Foreground="#1d99ff">
                         </TextBlock>
-                        <TextBox 
+                        <TextBox
                             Name="CodeBox"
                             Watermark="Сюда"
                             FontFamily="Motiva Sans"
@@ -247,7 +246,7 @@
                             Background="#393c44"
                             VerticalContentAlignment="Center">
                         </TextBox>
-                        <Button 
+                        <Button
                             Name="CodeButton"
                             Content="Сохранить"
                             FontFamily="Motiva Sans"
@@ -271,7 +270,7 @@
                 FontFamily="Motiva Sans"
                 Background="#171d25">
                 <TabItem.Styles>
-                    <Style Selector="TabItem:selected" >
+                    <Style Selector="TabItem:selected">
                         <Setter
                             Property="Foreground"
                             Value="#188EE3">
@@ -279,6 +278,53 @@
                     </Style>
                 </TabItem.Styles>
                 <Grid>
+                    <Grid
+                        Margin="0 50 0 0"
+                        ZIndex="2"
+                        IsVisible="False"
+                        Name="CodeGrid"
+                        Height="700"
+                        Width="1000"
+                        Background="Black">
+                        <TextBlock
+                            Name="CodeBlock"
+                            FontFamily="Motiva Sans"
+                            FontSize="24"
+                            Foreground="#1d99ff"
+                            Text="Чтобы войти введите свой код"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="0,0,0,90">
+                        </TextBlock>
+                        <TextBox
+                            Name="CodeTextBox"
+                            Watermark="КОД"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="Motiva Sans"
+                            FontSize="16"
+                            Background="#3e4752"
+                            Foreground="#969faa"
+                            Height="20"
+                            Width="140">
+                        </TextBox>
+                        <Button
+                            Name="CheckCodeButton"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            FontFamily="Motiva Sans"
+                            FontSize="12"
+                            Background="#3e4752"
+                            Foreground="#969faa"
+                            Content="ПРОВЕРИТЬ"
+                            Margin="0,90,0,0"
+                            Click="CheckCodeButton_OnClick">
+                        </Button>
+                    </Grid>
                     <TextBlock
                         Text="ЭТО ВАШ МЕНЕДЖЕР ПАРОЛЕЙ"
                         IsVisible="True"

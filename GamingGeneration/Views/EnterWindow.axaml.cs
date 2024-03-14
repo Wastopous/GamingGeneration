@@ -9,10 +9,13 @@ namespace GamingGeneration;
 
 public partial class EnterWindow : Window
 {
+    #region main
     public EnterWindow()
     {
         InitializeComponent();
     }
+    #endregion
+    #region sign in
 
     private void EnterButton_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -27,7 +30,7 @@ public partial class EnterWindow : Window
         this.Hide();
         mainWindow.Show();
     }
-
+    
     private bool IsLetter(string input)
     {
         return System.Text.RegularExpressions.Regex.IsMatch(input, @"[a-zA-Zа-яА-Я]+$");
@@ -37,7 +40,7 @@ public partial class EnterWindow : Window
     {
         ErrorLabel.IsVisible = true;
     }
-
+    
     private void NameTextBox_OnTextChanging(object? sender, TextChangingEventArgs e)
     {
         NameTextBox.Watermark = "";
@@ -52,12 +55,13 @@ public partial class EnterWindow : Window
             e.Handled = true;
         }
     }
-
-
+    #endregion
+    #region sign up
     private void RegLabel_OnClick(object? sender, RoutedEventArgs e)
     {
         var regWindow = new RegWindow();
         regWindow.Show();
         this.Close();
     }
+    #endregion
 }
