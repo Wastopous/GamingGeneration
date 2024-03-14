@@ -28,39 +28,60 @@ public partial class MainWindow : Window
 
     private void Save()
     {
-        var serialize = JsonSerializer.Serialize(user);
-        File.WriteAllText("savefile", serialize);
+        var serializeCreds = JsonSerializer.Serialize(User);
+        File.WriteAllText("savefile", serializeCreds);
+
+        var serializeCodes = JsonSerializer.Serialize(Codes);
+        File.WriteAllText("codes", serializeCodes);
     }
 
     private void Load()
     {
-        string read = "{}";
+        string readStored = "{}";
         if (File.Exists("savefile"))
         {
             PassGenButton.IsEnabled = true;
             NameTabItem.IsVisible = true;
             CodePanel.IsVisible = true;
-            read = File.ReadAllText("savefile");
-            if (string.IsNullOrEmpty(read))
+            readStored = File.ReadAllText("savefile");
+            if (string.IsNullOrEmpty(readStored))
             {
-                read = "{}";
+                readStored = "{}";
             }
         }
 
-        user = JsonSerializer.Deserialize<Dictionary<string, List<Credentials>>>(read);
-        if (!user.ContainsKey(enteredName))
-        {
-            user[enteredName] = new List<Credentials>();
+        string readCodes = "{}";
+        if (File.Exists("codes")) {
+            readCodes = File.ReadAllText("codes");
+            if (string.IsNullOrEmpty(readCodes)) {
+                readStored = "{}";
+            }
         }
 
-        DataGrid.ItemsSource = user?[enteredName];
-        CodePanel.IsVisible = false;
+        if (JsonSerializer.Deserialize<Dictionary<string, List<Credentials>>>(readStored) is { } us) {
+            User = us;
+        }
+        
+        if (!User.ContainsKey(enteredName))
+        {
+            User[enteredName] = new List<Credentials>();
+        }
+
+        if (JsonSerializer.Deserialize<Dictionary<string, string>>(readCodes) is { } codes) {
+            Codes = codes;
+        }
+
+        if (Codes.ContainsKey(enteredName)) {
+            CodePanel.IsVisible = false;
+        }
+        DataGrid.ItemsSource = User[enteredName];
     }
 
 
-    public Dictionary<string, List<Credentials>>? user = new Dictionary<string, List<Credentials>>();
+    public Dictionary<string, List<Credentials>> User = new Dictionary<string, List<Credentials>>();
+    public Dictionary<string, string> Codes = new Dictionary<string, string>();
     private string enteredName;
-    private string code;
+    private string code => Codes[enteredName];
 
     #endregion
 
@@ -199,19 +220,18 @@ public partial class MainWindow : Window
 
     private void PassSaveButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (!user.ContainsKey(enteredName))
+        if (!User.ContainsKey(enteredName))
         {
-            user[enteredName] = new List<Credentials>();
+            User[enteredName] = new List<Credentials>();
         }
 
-        user[enteredName].Add(new Credentials()
+        User[enteredName].Add(new Credentials()
         {
             isPassword = true,
-
             value = PassTextBox.Text
         });
         PassSavePanel.IsVisible = false;
-        CodePanel.IsVisible = true;
+        // CodePanel.IsVisible = true;
         Save();
     }
 
@@ -219,12 +239,12 @@ public partial class MainWindow : Window
     {
         PassGenButton.IsEnabled = true;
         NikTextBox.IsReadOnly = true;
-        if (user.ContainsKey(enteredName))
+        if (!User.ContainsKey(enteredName))
         {
-            user[enteredName] = new List<Credentials>();
+            User[enteredName] = new List<Credentials>();
         }
 
-        user[enteredName].Add(new Credentials() { value = NikTextBox.Text });
+        User[enteredName].Add(new Credentials() { value = NikTextBox.Text });
         Save();
         NikSaveEditPanel.IsVisible = false;
     }
@@ -240,21 +260,23 @@ public partial class MainWindow : Window
 
     private void CodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (!user.ContainsKey(enteredName))
-        {
-            user[enteredName] = new List<Credentials>();
-        }
-        Credentials.code = CodeBox.Text;
+        Codes.Add(enteredName, CodeTextBox.Text ?? "");
         CodePanel.IsVisible = false;
+        Save();
     }
 
     #endregion
 
     private void CheckCodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (!string.IsNullOrEmpty(CodeTextBox.Text = Credentials.code))
-        {
-            CodeGrid.IsVisible = false;
+        if (string.IsNullOrEmpty(CodeTextBox.Text)) {
+            return;
         }
+        if (CodeTextBox.Text != code) {
+            return;
+        }
+
+        CodeTextBox.Text = "";
+        CodeGrid.IsVisible = false;
     }
 }
