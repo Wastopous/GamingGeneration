@@ -19,7 +19,7 @@
     </Window.Styles>
     <Grid Background="#171d25">
         <Panel>
-            <Image Source="/Assets/gg.png" Width="70" Height="70" Margin="-580 -335 0 0"></Image>
+            <Image Source="/Assets/ggg.png" Width="70" Height="70" Margin="-580 -335 0 0"></Image>
             <TextBlock Text="Gaming Generation"
                        HorizontalAlignment="Center"
                        Margin="-250 35 0 0"

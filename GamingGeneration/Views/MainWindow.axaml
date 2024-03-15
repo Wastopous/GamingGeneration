@@ -20,8 +20,9 @@
             <TabItem
 
                 Name="NickTabItem"
+                FontWeight="Normal"
+                PointerPressed="NickTabItem_OnPointerPressed"
                 Header="НИКНЕЙМ"
-                Width="130"
                 HorizontalContentAlignment="Center"
                 FontFamily="Motiva Sans"
                 FontSize="20"
@@ -145,7 +146,9 @@
             <!--Пароль-->
             <TabItem
                 Name="PassTabItem"
-                Header="ПАРОЛЬ" Width="110"
+                FontWeight="Normal"
+                PointerPressed="PassTabItem_OnPointerPressed"
+                Header="ПАРОЛЬ" 
                 HorizontalContentAlignment="Center"
                 FontFamily="Motiva Sans"
                 FontSize="20"
@@ -263,9 +266,10 @@
 
             <!--ГГ-->
             <TabItem
-                IsVisible="False"
-                PointerPressed="NameTabItem_OnPointerPressed"
                 Name="NameTabItem"
+                IsVisible="False"
+                FontWeight="Normal"
+                PointerPressed="NameTabItem_OnPointerPressed"
                 FontSize="20"
                 FontFamily="Motiva Sans"
                 Background="#171d25">

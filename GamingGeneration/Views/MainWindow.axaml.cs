@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -51,29 +52,35 @@ public partial class MainWindow : Window
         }
 
         string readCodes = "{}";
-        if (File.Exists("codes")) {
+        if (File.Exists("codes"))
+        {
             readCodes = File.ReadAllText("codes");
-            if (string.IsNullOrEmpty(readCodes)) {
+            if (string.IsNullOrEmpty(readCodes))
+            {
                 readStored = "{}";
             }
         }
 
-        if (JsonSerializer.Deserialize<Dictionary<string, List<Credentials>>>(readStored) is { } us) {
+        if (JsonSerializer.Deserialize<Dictionary<string, List<Credentials>>>(readStored) is { } us)
+        {
             User = us;
         }
-        
+
         if (!User.ContainsKey(enteredName))
         {
             User[enteredName] = new List<Credentials>();
         }
 
-        if (JsonSerializer.Deserialize<Dictionary<string, string>>(readCodes) is { } codes) {
+        if (JsonSerializer.Deserialize<Dictionary<string, string>>(readCodes) is { } codes)
+        {
             Codes = codes;
         }
 
-        if (Codes.ContainsKey(enteredName)) {
+        if (Codes.ContainsKey(enteredName))
+        {
             CodePanel.IsVisible = false;
         }
+
         DataGrid.ItemsSource = User[enteredName];
     }
 
@@ -256,6 +263,9 @@ public partial class MainWindow : Window
     private void NameTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         CodeGrid.IsVisible = true;
+        NameTabItem. FontWeight = FontWeight.ExtraBold;
+        NickTabItem.FontWeight = FontWeight.Normal;
+        PassTabItem.FontWeight = FontWeight.Normal;
     }
 
     private void CodeButton_OnClick(object? sender, RoutedEventArgs e)
@@ -269,14 +279,27 @@ public partial class MainWindow : Window
 
     private void CheckCodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (string.IsNullOrEmpty(CodeTextBox.Text)) {
-            return;
-        }
-        if (CodeTextBox.Text != code) {
-            return;
-        }
-
-        CodeTextBox.Text = "";
+        //      if (string.IsNullOrEmpty(CodeTextBox.Text)) {
+        //       return;
+        //   }
+        //   if (CodeTextBox.Text != code) {
+        //       return;
+        //   }
+        //CodeTextBox.Text = "";
         CodeGrid.IsVisible = false;
+    }
+
+    private void NickTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        NickTabItem. FontWeight = FontWeight.ExtraBold;
+        NameTabItem.FontWeight = FontWeight.Normal;
+        PassTabItem.FontWeight = FontWeight.Normal;
+    }
+
+    private void PassTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        PassTabItem. FontWeight = FontWeight.ExtraBold;
+        NameTabItem.FontWeight = FontWeight.Normal;
+        NickTabItem.FontWeight = FontWeight.Normal;
     }
 }
