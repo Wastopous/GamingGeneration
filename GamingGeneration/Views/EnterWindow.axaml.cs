@@ -9,6 +9,7 @@ namespace GamingGeneration;
 
 public partial class EnterWindow : Window
 {
+    //дальше будет регистрация на различных платформах и вход в них путём всплывающих окон с подробно описанными шагами и каждое окно будет переключаться на следующее 
     #region main
     public EnterWindow()
     {
