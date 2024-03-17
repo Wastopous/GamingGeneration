@@ -318,6 +318,7 @@
                         </TextBox>
                         <Button
                             Name="CheckCodeButton"
+                            IsVisible="False"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             HorizontalContentAlignment="Center"

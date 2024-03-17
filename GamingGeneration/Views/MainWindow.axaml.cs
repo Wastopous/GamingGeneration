@@ -178,20 +178,405 @@ public partial class MainWindow : Window
 
     private string GenerateNickName()
     {
-        string inputText = nikTextBox.Text;
+        string inputText = nikTextBox.Text.ToLower(); // Приводим все буквы к нижнему регистру
 
         Random r = new Random();
         StringBuilder result = new StringBuilder();
 
         foreach (char character in inputText)
         {
-            if (char.IsLetter(character))
+            switch (character)
             {
-                result.Append(r.Next(2) == 0 ? char.ToUpper(character) : character);
-            }
-            else if (char.IsWhiteSpace(character))
-            {
-                result.Append('_');
+                case ' ':
+                    int choice_ = r.Next(3);
+                    switch (choice_)
+                    {
+                        case 0:
+                            result.Append("_");
+                            break;
+                        case 1:
+                            result.Append("\ud83d\ude3b");
+                            break;
+                        case 2:
+                            result.Append("\ud83e\udd20");
+                            break;
+                        case 3:
+                            result.Append("༻꧂");
+                            break;
+                        case 4:
+                            result.Append("ღღღ");
+                            break;
+                    }
+                    break;
+                case 'а':
+                    int choiceA = r.Next(3);
+                    switch (choiceA)
+                    {
+                        case 0:
+                            result.Append("A");
+                            break;
+                        case 1:
+                            result.Append("@");
+                            break;
+                    }
+                    break;
+                case 'б':
+                    int choiceB = r.Next(2);
+                    switch (choiceB)
+                    {
+                        case 0:
+                            result.Append("G");
+                            break;
+                        case 1:
+                            result.Append("6");
+                            break;
+                    }
+                    break;
+                case 'в':
+                    int choiceV = r.Next(3);
+                    switch (choiceV)
+                    {
+                        case 0:
+                            result.Append("B");
+                            break;
+                        case 1:
+                            result.Append("BB");
+                            break;
+                    }
+                    break;
+                case 'г':
+                    int choiceG = r.Next(3);
+                    switch (choiceG)
+                    {
+                        case 0:
+                            result.Append("r");
+                            break;
+                        case 1:
+                            result.Append("7");
+                            break;
+                    }
+                    break;
+                case 'д':
+                    int choiceD = r.Next(3);
+                    switch (choiceD)
+                    {
+                        case 0:
+                            result.Append("D");
+                            break;
+                        case 1:
+                            result.Append("ᗪ");
+                            break;
+                    }
+                    break;
+                case 'е':
+                    int choiceE = r.Next(3);
+                    switch (choiceE)
+                    {
+                        case 0:
+                            result.Append("\u265b е \u265b");
+                            break;
+                        case 1:
+                            result.Append("Ɇ");
+                            break;
+                    }
+                    break;
+                case 'ж':
+                    int choiceGE = r.Next(3);
+                    switch (choiceGE)
+                    {
+                        case 0:
+                            result.Append("\ud83e\udd20 ж \ud83e\udd20");
+                            break;
+                        case 1:
+                            result.Append("Ɇ");
+                            break;
+                    }
+                    break;
+                case 'з':
+                    int choiceZ = r.Next(3);
+                    switch (choiceZ)
+                    {
+                        case 0:
+                            result.Append("Z");
+                            break;
+                        case 1:
+                            result.Append("乙\n");
+                            break;
+                    }
+                    break;
+                case 'и':
+                    int choiceI = r.Next(3);
+                    switch (choiceI)
+                    {
+                        case 0:
+                            result.Append("1");
+                            break;
+                        case 1:
+                            result.Append("I");
+                            break;
+                        case 2:
+                            result.Append("\ud835\udd5a");
+                            break;
+                    }
+                    break;
+                case 'й':
+                    int choiceYi = r.Next(3);
+                    switch (choiceYi)
+                    {
+                        case 0:
+                            result.Append("u*");
+                            break;
+                        case 1:
+                            result.Append("Y");
+                            break;
+                    }
+                    break;
+                case 'к':
+                    int choiceK = r.Next(3);
+                    switch (choiceK)
+                    {
+                        case 0:
+                            result.Append("K");
+                            break;
+                        case 1:
+                            result.Append("k");
+                            break;
+                    }
+                    break;
+                case 'л':
+                    int choiceL = r.Next(3);
+                    switch (choiceL)
+                    {
+                        case 0:
+                            result.Append("JI");
+                            break;
+                        case 1:
+                            result.Append("[L]");
+                            break;
+                    }
+                    break;
+                case 'м':
+                    int choiceM = r.Next(3);
+                    switch (choiceM)
+                    {
+                        case 0:
+                            result.Append("M");
+                            break;
+                        case 1:
+                            result.Append("m");
+                            break;
+                    }
+                    break;
+                case 'н':
+                    int choiceN = r.Next(3);
+                    switch (choiceN)
+                    {
+                        case 0:
+                            result.Append("H");
+                            break;
+                        case 1:
+                            result.Append("I-I");
+                            break;
+                    }
+                    break;
+                case 'о':
+                    int choiceO = r.Next(3);
+                    switch (choiceO)
+                    {
+                        case 0:
+                            result.Append("0");
+                            break;
+                        case 1:
+                            result.Append("O");
+                            break;
+                        case 2:
+                            result.Append("o");
+                            break;
+                    }
+                    break;
+                case 'п':
+                    int choiceP = r.Next(3);
+                    switch (choiceP)
+                    {
+                        case 0:
+                            result.Append("TT");
+                            break;
+                        case 1:
+                            result.Append("n");
+                            break;
+                    }
+                    break;
+                case 'р':
+                    int choiceR = r.Next(3);
+                    switch (choiceR)
+                    {
+                        case 0:
+                            result.Append("P");
+                            break;
+                        case 1:
+                            result.Append("R");
+                            break;
+                    }
+                    break;
+                case 'с':
+                    int choiceC = r.Next(3);
+                    switch (choiceC)
+                    {
+                        case 0:
+                            result.Append("C");
+                            break;
+                        case 1:
+                            result.Append("c");
+                            break;
+                    }
+                    break;
+                case 'т':
+                    int choiceT = r.Next(3);
+                    switch (choiceT)
+                    {
+                        case 0:
+                            result.Append("t");
+                            break;
+                        case 1:
+                            result.Append("T");
+                            break;
+                    }
+                    break;
+                case 'у':
+                    int choiceU = r.Next(3);
+                    switch (choiceU)
+                    {
+                        case 0:
+                            result.Append("y");
+                            break;
+                        case 1:
+                            result.Append("j");
+                            break;
+                    }
+                    break;
+                case 'ф':
+                    int choiceF = r.Next(3);
+                    switch (choiceF)
+                    {
+                        case 0:
+                            result.Append("f");
+                            break;
+                        case 1:
+                            result.Append("F");
+                            break;
+                    }
+                    break;
+                case 'х':
+                    int choiceX = r.Next(3);
+                    switch (choiceX)
+                    {
+                        case 0:
+                            result.Append("X");
+                            break;
+                        case 1:
+                            result.Append("x");
+                            break;
+                    }
+                    break;
+                case 'ш':
+                    int choiceSHE = r.Next(3);
+                    switch (choiceSHE)
+                    {
+                        case 0:
+                            result.Append("lll");
+                            break;
+                        case 1:
+                            result.Append("III");
+                            break;
+                    }
+                    break;
+                case 'щ':
+                    int choiceSHA = r.Next(3);
+                    switch (choiceSHA)
+                    {
+                        case 0:
+                            result.Append("llj");
+                            break;
+                        case 1:
+                            result.Append("IIL");
+                            break;
+                    }
+                    break;
+                case 'ъ':
+                    int choiceTverd = r.Next(3);
+                    switch (choiceTverd)
+                    {
+                        case 0:
+                            result.Append("'b");
+                            break;
+                        case 1:
+                            result.Append("'6");
+                            break;
+                    }
+                    break;
+                case 'ь':
+                    int choiceMagk = r.Next(3);
+                    switch (choiceMagk)
+                    {
+                        case 0:
+                            result.Append("b");
+                            break;
+                        case 1:
+                            result.Append("d");
+                            break;
+                    }
+                    break;
+                case 'ы':
+                    int choiceYI = r.Next(3);
+                    switch (choiceYI)
+                    {
+                        case 0:
+                            result.Append("bl");
+                            break;
+                        case 1:
+                            result.Append("bI");
+                            break;
+                    }
+                    break;
+                case 'э':
+                    int choiceYE = r.Next(3);
+                    switch (choiceYE)
+                    {
+                        case 0:
+                            result.Append("3");
+                            break;
+                        case 1:
+                            result.Append("E");
+                            break;
+                    }
+                    break;
+                case 'ю':
+                    int choiceYU = r.Next(3);
+                    switch (choiceYU)
+                    {
+                        case 0:
+                            result.Append("u");
+                            break;
+                        case 1:
+                            result.Append("U");
+                            break;
+                    }
+                    break;
+                case 'я':
+                    int choiceYA = r.Next(3);
+                    switch (choiceYA)
+                    {
+                        case 0:
+                            result.Append("9I");
+                            break;
+                        case 1:
+                            result.Append("R");
+                            break;
+                    }
+                    break;
+                default:
+                    result.Append(character);
+                    break;
             }
         }
 
@@ -273,6 +658,7 @@ public partial class MainWindow : Window
         Codes.Add(enteredName, CodeTextBox.Text ?? "");
         CodePanel.IsVisible = false;
         Save();
+        CheckCodeButton.IsVisible = true;
     }
 
     #endregion
@@ -285,7 +671,7 @@ public partial class MainWindow : Window
         //   if (CodeTextBox.Text != code) {
         //       return;
         //   }
-        //CodeTextBox.Text = "";
+        CodeTextBox.Text = "";
         CodeGrid.IsVisible = false;
     }
 
