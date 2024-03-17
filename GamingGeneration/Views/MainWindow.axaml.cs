@@ -189,7 +189,7 @@ public partial class MainWindow : Window
             switch (character)
             {
                 case ' ':
-                    int choice_ = r.Next(3);
+                    int choice_ = r.Next(6);
                     switch (choice_)
                     {
                         case 0:
@@ -202,16 +202,19 @@ public partial class MainWindow : Window
                             result.Append("\ud83e\udd20");
                             break;
                         case 3:
-                            result.Append("༻꧂");
+                            result.Append("༻");
                             break;
                         case 4:
-                            result.Append("ღღღ");
+                            result.Append("ღ");
+                            break;
+                        case 5:
+                            result.Append("꧂");
                             break;
                     }
 
                     break;
                 case 'а':
-                    int choiceA = r.Next(3);
+                    int choiceA = r.Next(2);
                     switch (choiceA)
                     {
                         case 0:
@@ -237,7 +240,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'в':
-                    int choiceV = r.Next(3);
+                    int choiceV = r.Next(2);
                     switch (choiceV)
                     {
                         case 0:
@@ -250,7 +253,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'г':
-                    int choiceG = r.Next(3);
+                    int choiceG = r.Next(2);
                     switch (choiceG)
                     {
                         case 0:
@@ -263,7 +266,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'д':
-                    int choiceD = r.Next(3);
+                    int choiceD = r.Next(2);
                     switch (choiceD)
                     {
                         case 0:
@@ -276,11 +279,11 @@ public partial class MainWindow : Window
 
                     break;
                 case 'е':
-                    int choiceE = r.Next(3);
+                    int choiceE = r.Next(2);
                     switch (choiceE)
                     {
                         case 0:
-                            result.Append("\u265b е \u265b");
+                            result.Append("е");
                             break;
                         case 1:
                             result.Append("Ɇ");
@@ -289,20 +292,17 @@ public partial class MainWindow : Window
 
                     break;
                 case 'ж':
-                    int choiceGE = r.Next(3);
+                    int choiceGE = r.Next(2);
                     switch (choiceGE)
                     {
                         case 0:
-                            result.Append("\ud83e\udd20 ж \ud83e\udd20");
-                            break;
-                        case 1:
-                            result.Append("Ɇ");
+                            result.Append("jk");
                             break;
                     }
 
                     break;
                 case 'з':
-                    int choiceZ = r.Next(3);
+                    int choiceZ = r.Next(2);
                     switch (choiceZ)
                     {
                         case 0:
@@ -331,7 +331,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'й':
-                    int choiceYi = r.Next(3);
+                    int choiceYi = r.Next(2);
                     switch (choiceYi)
                     {
                         case 0:
@@ -344,7 +344,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'к':
-                    int choiceK = r.Next(3);
+                    int choiceK = r.Next(2);
                     switch (choiceK)
                     {
                         case 0:
@@ -357,20 +357,20 @@ public partial class MainWindow : Window
 
                     break;
                 case 'л':
-                    int choiceL = r.Next(3);
+                    int choiceL = r.Next(2);
                     switch (choiceL)
                     {
                         case 0:
                             result.Append("JI");
                             break;
                         case 1:
-                            result.Append("[L]");
+                            result.Append("L");
                             break;
                     }
 
                     break;
                 case 'м':
-                    int choiceM = r.Next(3);
+                    int choiceM = r.Next(2);
                     switch (choiceM)
                     {
                         case 0:
@@ -383,7 +383,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'н':
-                    int choiceN = r.Next(3);
+                    int choiceN = r.Next(2);
                     switch (choiceN)
                     {
                         case 0:
@@ -412,7 +412,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'п':
-                    int choiceP = r.Next(3);
+                    int choiceP = r.Next(2);
                     switch (choiceP)
                     {
                         case 0:
@@ -425,7 +425,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'р':
-                    int choiceR = r.Next(3);
+                    int choiceR = r.Next(2);
                     switch (choiceR)
                     {
                         case 0:
@@ -438,7 +438,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'с':
-                    int choiceC = r.Next(3);
+                    int choiceC = r.Next(2);
                     switch (choiceC)
                     {
                         case 0:
@@ -451,7 +451,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'т':
-                    int choiceT = r.Next(3);
+                    int choiceT = r.Next(2);
                     switch (choiceT)
                     {
                         case 0:
@@ -464,7 +464,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'у':
-                    int choiceU = r.Next(3);
+                    int choiceU = r.Next(2);
                     switch (choiceU)
                     {
                         case 0:
@@ -477,7 +477,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'ф':
-                    int choiceF = r.Next(3);
+                    int choiceF = r.Next(2);
                     switch (choiceF)
                     {
                         case 0:
@@ -490,7 +490,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'х':
-                    int choiceX = r.Next(3);
+                    int choiceX = r.Next(2);
                     switch (choiceX)
                     {
                         case 0:
@@ -503,7 +503,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'ш':
-                    int choiceSHE = r.Next(3);
+                    int choiceSHE = r.Next(2);
                     switch (choiceSHE)
                     {
                         case 0:
@@ -516,7 +516,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'щ':
-                    int choiceSHA = r.Next(3);
+                    int choiceSHA = r.Next(2);
                     switch (choiceSHA)
                     {
                         case 0:
@@ -529,7 +529,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'ъ':
-                    int choiceTverd = r.Next(3);
+                    int choiceTverd = r.Next(2);
                     switch (choiceTverd)
                     {
                         case 0:
@@ -542,7 +542,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'ь':
-                    int choiceMagk = r.Next(3);
+                    int choiceMagk = r.Next(2);
                     switch (choiceMagk)
                     {
                         case 0:
@@ -555,7 +555,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'ы':
-                    int choiceYI = r.Next(3);
+                    int choiceYI = r.Next(2);
                     switch (choiceYI)
                     {
                         case 0:
@@ -568,20 +568,18 @@ public partial class MainWindow : Window
 
                     break;
                 case 'э':
-                    int choiceYE = r.Next(3);
+                    int choiceYE = r.Next(1);
                     switch (choiceYE)
                     {
                         case 0:
                             result.Append("3");
                             break;
-                        case 1:
-                            result.Append("E");
-                            break;
+
                     }
 
                     break;
                 case 'ю':
-                    int choiceYU = r.Next(3);
+                    int choiceYU = r.Next(2);
                     switch (choiceYU)
                     {
                         case 0:
@@ -594,7 +592,7 @@ public partial class MainWindow : Window
 
                     break;
                 case 'я':
-                    int choiceYA = r.Next(3);
+                    int choiceYA = r.Next(2);
                     switch (choiceYA)
                     {
                         case 0:
