@@ -700,8 +700,8 @@ public partial class MainWindow : Window
 
             CodeTextBox.Text = "";
             CodeGrid.IsVisible = false;
-     
 
+     
     }
 
     private void NickTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
