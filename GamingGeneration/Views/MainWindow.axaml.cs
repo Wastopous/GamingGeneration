@@ -41,6 +41,7 @@ public partial class MainWindow : Window
         string readStored = "{}";
         if (File.Exists("savefile"))
         {
+            CheckCodeButton.IsVisible = true;
             PassGenButton.IsEnabled = true;
             NameTabItem.IsVisible = true;
             CodePanel.IsVisible = true;
@@ -207,6 +208,7 @@ public partial class MainWindow : Window
                             result.Append("ღღღ");
                             break;
                     }
+
                     break;
                 case 'а':
                     int choiceA = r.Next(3);
@@ -219,6 +221,7 @@ public partial class MainWindow : Window
                             result.Append("@");
                             break;
                     }
+
                     break;
                 case 'б':
                     int choiceB = r.Next(2);
@@ -231,6 +234,7 @@ public partial class MainWindow : Window
                             result.Append("6");
                             break;
                     }
+
                     break;
                 case 'в':
                     int choiceV = r.Next(3);
@@ -243,6 +247,7 @@ public partial class MainWindow : Window
                             result.Append("BB");
                             break;
                     }
+
                     break;
                 case 'г':
                     int choiceG = r.Next(3);
@@ -255,6 +260,7 @@ public partial class MainWindow : Window
                             result.Append("7");
                             break;
                     }
+
                     break;
                 case 'д':
                     int choiceD = r.Next(3);
@@ -267,6 +273,7 @@ public partial class MainWindow : Window
                             result.Append("ᗪ");
                             break;
                     }
+
                     break;
                 case 'е':
                     int choiceE = r.Next(3);
@@ -279,6 +286,7 @@ public partial class MainWindow : Window
                             result.Append("Ɇ");
                             break;
                     }
+
                     break;
                 case 'ж':
                     int choiceGE = r.Next(3);
@@ -291,6 +299,7 @@ public partial class MainWindow : Window
                             result.Append("Ɇ");
                             break;
                     }
+
                     break;
                 case 'з':
                     int choiceZ = r.Next(3);
@@ -303,6 +312,7 @@ public partial class MainWindow : Window
                             result.Append("乙\n");
                             break;
                     }
+
                     break;
                 case 'и':
                     int choiceI = r.Next(3);
@@ -318,6 +328,7 @@ public partial class MainWindow : Window
                             result.Append("\ud835\udd5a");
                             break;
                     }
+
                     break;
                 case 'й':
                     int choiceYi = r.Next(3);
@@ -330,6 +341,7 @@ public partial class MainWindow : Window
                             result.Append("Y");
                             break;
                     }
+
                     break;
                 case 'к':
                     int choiceK = r.Next(3);
@@ -342,6 +354,7 @@ public partial class MainWindow : Window
                             result.Append("k");
                             break;
                     }
+
                     break;
                 case 'л':
                     int choiceL = r.Next(3);
@@ -354,6 +367,7 @@ public partial class MainWindow : Window
                             result.Append("[L]");
                             break;
                     }
+
                     break;
                 case 'м':
                     int choiceM = r.Next(3);
@@ -366,6 +380,7 @@ public partial class MainWindow : Window
                             result.Append("m");
                             break;
                     }
+
                     break;
                 case 'н':
                     int choiceN = r.Next(3);
@@ -378,6 +393,7 @@ public partial class MainWindow : Window
                             result.Append("I-I");
                             break;
                     }
+
                     break;
                 case 'о':
                     int choiceO = r.Next(3);
@@ -393,6 +409,7 @@ public partial class MainWindow : Window
                             result.Append("o");
                             break;
                     }
+
                     break;
                 case 'п':
                     int choiceP = r.Next(3);
@@ -405,6 +422,7 @@ public partial class MainWindow : Window
                             result.Append("n");
                             break;
                     }
+
                     break;
                 case 'р':
                     int choiceR = r.Next(3);
@@ -417,6 +435,7 @@ public partial class MainWindow : Window
                             result.Append("R");
                             break;
                     }
+
                     break;
                 case 'с':
                     int choiceC = r.Next(3);
@@ -429,6 +448,7 @@ public partial class MainWindow : Window
                             result.Append("c");
                             break;
                     }
+
                     break;
                 case 'т':
                     int choiceT = r.Next(3);
@@ -441,6 +461,7 @@ public partial class MainWindow : Window
                             result.Append("T");
                             break;
                     }
+
                     break;
                 case 'у':
                     int choiceU = r.Next(3);
@@ -453,6 +474,7 @@ public partial class MainWindow : Window
                             result.Append("j");
                             break;
                     }
+
                     break;
                 case 'ф':
                     int choiceF = r.Next(3);
@@ -465,6 +487,7 @@ public partial class MainWindow : Window
                             result.Append("F");
                             break;
                     }
+
                     break;
                 case 'х':
                     int choiceX = r.Next(3);
@@ -477,6 +500,7 @@ public partial class MainWindow : Window
                             result.Append("x");
                             break;
                     }
+
                     break;
                 case 'ш':
                     int choiceSHE = r.Next(3);
@@ -489,6 +513,7 @@ public partial class MainWindow : Window
                             result.Append("III");
                             break;
                     }
+
                     break;
                 case 'щ':
                     int choiceSHA = r.Next(3);
@@ -501,6 +526,7 @@ public partial class MainWindow : Window
                             result.Append("IIL");
                             break;
                     }
+
                     break;
                 case 'ъ':
                     int choiceTverd = r.Next(3);
@@ -513,6 +539,7 @@ public partial class MainWindow : Window
                             result.Append("'6");
                             break;
                     }
+
                     break;
                 case 'ь':
                     int choiceMagk = r.Next(3);
@@ -525,6 +552,7 @@ public partial class MainWindow : Window
                             result.Append("d");
                             break;
                     }
+
                     break;
                 case 'ы':
                     int choiceYI = r.Next(3);
@@ -537,6 +565,7 @@ public partial class MainWindow : Window
                             result.Append("bI");
                             break;
                     }
+
                     break;
                 case 'э':
                     int choiceYE = r.Next(3);
@@ -549,6 +578,7 @@ public partial class MainWindow : Window
                             result.Append("E");
                             break;
                     }
+
                     break;
                 case 'ю':
                     int choiceYU = r.Next(3);
@@ -561,6 +591,7 @@ public partial class MainWindow : Window
                             result.Append("U");
                             break;
                     }
+
                     break;
                 case 'я':
                     int choiceYA = r.Next(3);
@@ -573,6 +604,7 @@ public partial class MainWindow : Window
                             result.Append("R");
                             break;
                     }
+
                     break;
                 default:
                     result.Append(character);
@@ -645,13 +677,7 @@ public partial class MainWindow : Window
 
     #region account
 
-    private void NameTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
-    {
-        CodeGrid.IsVisible = true;
-        NameTabItem. FontWeight = FontWeight.ExtraBold;
-        NickTabItem.FontWeight = FontWeight.Normal;
-        PassTabItem.FontWeight = FontWeight.Normal;
-    }
+
 
     private void CodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -671,21 +697,31 @@ public partial class MainWindow : Window
         //   if (CodeTextBox.Text != code) {
         //       return;
         //   }
-        CodeTextBox.Text = "";
-        CodeGrid.IsVisible = false;
+
+            CodeTextBox.Text = "";
+            CodeGrid.IsVisible = false;
+     
+
     }
 
     private void NickTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
-        NickTabItem. FontWeight = FontWeight.ExtraBold;
+        NickTabItem.FontWeight = FontWeight.ExtraBold;
         NameTabItem.FontWeight = FontWeight.Normal;
         PassTabItem.FontWeight = FontWeight.Normal;
     }
 
     private void PassTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
-        PassTabItem. FontWeight = FontWeight.ExtraBold;
+        PassTabItem.FontWeight = FontWeight.ExtraBold;
         NameTabItem.FontWeight = FontWeight.Normal;
         NickTabItem.FontWeight = FontWeight.Normal;
+    }
+    private void NameTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        CodeGrid.IsVisible = true;
+        NameTabItem.FontWeight = FontWeight.ExtraBold;
+        NickTabItem.FontWeight = FontWeight.Normal;
+        PassTabItem.FontWeight = FontWeight.Normal;
     }
 }
