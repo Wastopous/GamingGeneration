@@ -689,12 +689,12 @@ public partial class MainWindow : Window
 
     private void CheckCodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        //      if (string.IsNullOrEmpty(CodeTextBox.Text)) {
-        //       return;
-        //   }
-        //   if (CodeTextBox.Text != code) {
-        //       return;
-        //   }
+              if (string.IsNullOrEmpty(CodeTextBox.Text)) {
+               return;
+           }
+           if (CodeTextBox.Text != code) {
+              return;
+          }
 
             CodeTextBox.Text = "";
             CodeGrid.IsVisible = false;
