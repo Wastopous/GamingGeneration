@@ -686,7 +686,7 @@ public partial class MainWindow : Window
 
     #endregion
 
-    #region Design
+    #region design
     private void CheckCodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
         //      if (string.IsNullOrEmpty(CodeTextBox.Text)) {
