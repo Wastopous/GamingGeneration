@@ -29,77 +29,85 @@
                 FontSize="30"
                 Foreground="#ffffff">
             </TextBlock>
-            <TextBlock Name="LoginBlock"
-                       Margin="0 55 80 0"
-                       HorizontalAlignment="Center"
-                       Text="Введите свой логин*"
-                       FontWeight="UltraLight"
-                       FontFamily="Motiva Sans"
-                       FontSize="17"
-                       Foreground="#1d99ff">
+            <TextBlock
+                Name="LoginBlock"
+                Margin="0 55 80 0"
+                HorizontalAlignment="Center"
+                Text="Введите свой логин*"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
             </TextBlock>
-            <TextBox Name="LoginTextBox"
-                     FontFamily="Motiva Sans"
-                     Margin="0 0 0 250"
-                     Foreground="White"
-                     Height="40"
-                     Width="250"
-                     Background="#393c44"
-                     VerticalContentAlignment="Center">
+            <TextBox
+                Name="LoginTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 0 0 250"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
             </TextBox>
-            <TextBlock Name="NameBlock"
-                       Margin="0 120 100 0"
-                       HorizontalAlignment="Center"
-                       Text="Введите своё имя"
-                       FontWeight="UltraLight"
-                       FontFamily="Motiva Sans"
-                       FontSize="17"
-                       Foreground="#1d99ff">
+            <TextBlock
+                Name="NameBlock"
+                Margin="0 120 100 0"
+                HorizontalAlignment="Center"
+                Text="Введите своё имя"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
             </TextBlock>
-            <TextBox Name="NameTextBox"
-                     FontFamily="Motiva Sans"
-                     Margin="0 0 0 120"
-                     Foreground="White"
-                     Height="40"
-                     Width="250"
-                     Background="#393c44"
-                     VerticalContentAlignment="Center">
+            <TextBox
+                Name="NameTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 0 0 120"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
             </TextBox>
-            <TextBlock Name="SurBlock"
-                       Margin="0 185 50 0"
-                       HorizontalAlignment="Center"
-                       Text="Введите свою фамилию"
-                       FontWeight="UltraLight"
-                       FontFamily="Motiva Sans"
-                       FontSize="17"
-                       Foreground="#1d99ff">
+            <TextBlock
+                Name="SurBlock"
+                Margin="0 185 50 0"
+                HorizontalAlignment="Center"
+                Text="Введите свою фамилию"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
             </TextBlock>
-            <TextBox Name="SurNameTextBox"
-                     FontFamily="Motiva Sans"
-                     Margin="0 30 0 20"
-                     Foreground="White"
-                     Height="40"
-                     Width="250"
-                     Background="#393c44"
-                     VerticalContentAlignment="Center">
+            <TextBox
+                Name="SurNameTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 30 0 20"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
             </TextBox>
-            <TextBlock Name="MidNameBlock"
-                       Margin="0 255 55 0"
-                       HorizontalAlignment="Center"
-                       Text="Введите своё отчество"
-                       FontWeight="UltraLight"
-                       FontFamily="Motiva Sans"
-                       FontSize="17"
-                       Foreground="#1d99ff">
+            <TextBlock
+                Name="MidNameBlock"
+                Margin="0 255 55 0"
+                HorizontalAlignment="Center"
+                Text="Введите своё отчество"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
             </TextBlock>
-            <TextBox Name="MidNameTextBox"
-                     FontFamily="Motiva Sans"
-                     Margin="0 30 0 -120"
-                     Foreground="White"
-                     Height="40"
-                     Width="250"
-                     Background="#393c44"
-                     VerticalContentAlignment="Center">
+            <TextBox
+                Name="MidNameTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 30 0 -120"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
             </TextBox>
             <Button
                 Name="RegButton"
