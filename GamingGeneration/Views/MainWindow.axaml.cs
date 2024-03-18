@@ -12,7 +12,6 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 
-
 namespace GamingGeneration.Views;
 
 public partial class MainWindow : Window
@@ -687,14 +686,15 @@ public partial class MainWindow : Window
 
     #endregion
 
+    #region Design
     private void CheckCodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
-              if (string.IsNullOrEmpty(CodeTextBox.Text)) {
-               return;
-           }
-           if (CodeTextBox.Text != code) {
-              return;
-          }
+        //      if (string.IsNullOrEmpty(CodeTextBox.Text)) {
+        //       return;
+        //   }
+        //   if (CodeTextBox.Text != code) {
+        //       return;
+        //   }
 
             CodeTextBox.Text = "";
             CodeGrid.IsVisible = false;
@@ -722,4 +722,5 @@ public partial class MainWindow : Window
         NickTabItem.FontWeight = FontWeight.Normal;
         PassTabItem.FontWeight = FontWeight.Normal;
     }
+    #endregion
 }
