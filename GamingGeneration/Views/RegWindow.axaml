@@ -23,7 +23,7 @@
             <TextBlock
                 Margin="0 10 0 0"
                 HorizontalAlignment="Center"
-                Text="СОЗДАНИЕ АККАНТА"
+                Text="РЕГИСТРАЦИЯ"
                 FontWeight="UltraLight"
                 FontFamily="Motiva Sans"
                 FontSize="30"
@@ -91,24 +91,23 @@
             </TextBox>
             <TextBlock
                 Name="MidNameBlock"
-                Margin="0 255 55 0"
+                Margin="0 255 15 0"
                 HorizontalAlignment="Center"
-                Text="Введите своё отчество"
+                Text="Введите свою дату рождения"
                 FontWeight="UltraLight"
                 FontFamily="Motiva Sans"
                 FontSize="17"
                 Foreground="#1d99ff">
             </TextBlock>
-            <TextBox
-                Name="MidNameTextBox"
+            <DatePicker
+                Name="BirthPicker"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0 150 0 0 "
+                FontWeight="UltraLight"
                 FontFamily="Motiva Sans"
-                Margin="0 30 0 -120"
-                Foreground="White"
-                Height="40"
-                Width="250"
-                Background="#393c44"
-                VerticalContentAlignment="Center">
-            </TextBox>
+                Width="250">
+            </DatePicker>
             <Button
                 Name="RegButton"
                 Content="ЗАРЕГИСТРИРОВАТЬСЯ"
@@ -131,7 +130,6 @@
                 FontFamily="Motiva Sans"
                 Classes="underline"
                 FontSize="13">
-
             </Button>
         </Panel>
     </Grid>

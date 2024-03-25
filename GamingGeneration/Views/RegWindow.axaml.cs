@@ -35,7 +35,7 @@ public partial class RegWindow : Window
         bool haveText = !string.IsNullOrWhiteSpace(LoginTextBox.Text) &&
                          !string.IsNullOrWhiteSpace(NameTextBox.Text) &&
                          !string.IsNullOrWhiteSpace(SurNameTextBox.Text) &&
-                         !string.IsNullOrWhiteSpace(MidNameTextBox.Text);
+                         !string.IsNullOrWhiteSpace(BirthPicker.ToString());
 
         if (!haveText)
         {

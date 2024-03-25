@@ -23,8 +23,8 @@
         <Panel>
             <Image Source="/Assets/ggg.png" Width="70" Height="70" Margin="-580 -335 0 0"></Image>
             <TextBlock Text="Gaming Generation"
-                       HorizontalAlignment="Center"
-                       Margin="-250 35 0 0"
+                       HorizontalAlignment="Left"
+                       Margin="100 35 0 0"
                        FontWeight="Bold"
                        FontFamily="Motiva Sans"
                        FontSize="20"
@@ -46,7 +46,7 @@
                    Foreground="Red"
                    FontSize="13"
                    FontFamily="Motiva Sans"
-                   Margin="0 -65 0 0"
+                   Margin="0 0 0 65"
                    IsVisible="False">
             </Label>
             <TextBox Name="NameTextBox"
@@ -74,16 +74,16 @@
                     Background="#208cff"
                     Click="EnterButton_OnClick">
             </Button>
-           <!-- <Button Name="RegLabel"
+            <Button Name="RegLabel"
                     HorizontalAlignment="Center"
-                    Content="Не могу войти"
+                    Content="Впервые тут?"
                     Background="Transparent"
                     Margin="0 200 0 0"
                     FontFamily="Motiva Sans"
                     Classes="underline"
                     FontSize="13"
                     Click="RegLabel_OnClick">
-            </Button>-->
+            </Button>
         </Panel>
     </Grid>
 </Window>
