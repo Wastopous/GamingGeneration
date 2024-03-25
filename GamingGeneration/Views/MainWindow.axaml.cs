@@ -12,6 +12,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 
+
 namespace GamingGeneration.Views;
 
 public partial class MainWindow : Window
@@ -178,7 +179,7 @@ public partial class MainWindow : Window
 
     private string GenerateNickName()
     {
-        string inputText = nikTextBox.Text.ToLower(); // Приводим все буквы к нижнему регистру
+        string inputText = nikTextBox.Text.ToLower();
 
         Random r = new Random();
         StringBuilder result = new StringBuilder();
@@ -286,6 +287,19 @@ public partial class MainWindow : Window
                             break;
                         case 1:
                             result.Append("Ɇ");
+                            break;
+                    }
+
+                    break;
+                case 'ё':
+                    int choiceYO = r.Next(2);
+                    switch (choiceYO)
+                    {
+                        case 0:
+                            result.Append("e^");
+                            break;
+                        case 1:
+                            result.Append("$");
                             break;
                     }
 
@@ -573,7 +587,6 @@ public partial class MainWindow : Window
                         case 0:
                             result.Append("3");
                             break;
-
                     }
 
                     break;
@@ -674,8 +687,6 @@ public partial class MainWindow : Window
 
     #region account
 
-
-
     private void CodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
         Codes.Add(enteredName, CodeTextBox.Text ?? "");
@@ -687,6 +698,7 @@ public partial class MainWindow : Window
     #endregion
 
     #region design
+
     private void CheckCodeButton_OnClick(object? sender, RoutedEventArgs e)
     {
         //      if (string.IsNullOrEmpty(CodeTextBox.Text)) {
@@ -696,10 +708,8 @@ public partial class MainWindow : Window
         //       return;
         //   }
 
-            CodeTextBox.Text = "";
-            CodeGrid.IsVisible = false;
-
-     
+        CodeTextBox.Text = "";
+        CodeGrid.IsVisible = false;
     }
 
     private void NickTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -715,6 +725,7 @@ public partial class MainWindow : Window
         NameTabItem.FontWeight = FontWeight.Normal;
         NickTabItem.FontWeight = FontWeight.Normal;
     }
+
     private void NameTabItem_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         CodeGrid.IsVisible = true;
@@ -722,5 +733,6 @@ public partial class MainWindow : Window
         NickTabItem.FontWeight = FontWeight.Normal;
         PassTabItem.FontWeight = FontWeight.Normal;
     }
+
     #endregion
 }
