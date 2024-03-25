@@ -4,17 +4,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         d:DesignWidth="800"
-        d:DesignHeight="450"
+        d:DesignHeight="600"
         x:Class="GamingGeneration.Views.RegWindow"
         Title="RegWindow"
-        Height="450"
+        Height="650"
         Width="800"
         CanResize="False"
         WindowStartupLocation="CenterScreen">
     <Window.Styles>
         <Style Selector="Button.underline">
             <Style Selector="^ AccessText">
-                <Setter Property="TextDecorations" Value="Underline" />
+                <Setter Property="TextDecorations" Value="Underline"/>
             </Style>
         </Style>
     </Window.Styles>
@@ -42,7 +42,7 @@
             <TextBox
                 Name="LoginTextBox"
                 FontFamily="Motiva Sans"
-                Margin="0 0 0 250"
+                Margin="0 0 0 400"
                 Foreground="White"
                 Height="40"
                 Width="250"
@@ -62,7 +62,7 @@
             <TextBox
                 Name="NameTextBox"
                 FontFamily="Motiva Sans"
-                Margin="0 0 0 120"
+                Margin="0 0 0 270"
                 Foreground="White"
                 Height="40"
                 Width="250"
@@ -82,7 +82,7 @@
             <TextBox
                 Name="SurNameTextBox"
                 FontFamily="Motiva Sans"
-                Margin="0 30 0 20"
+                Margin="0 30 0 170"
                 Foreground="White"
                 Height="40"
                 Width="250"
@@ -103,11 +103,32 @@
                 Name="BirthPicker"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Margin="0 150 0 0 "
+                Margin="0 150 0 150 "
                 FontWeight="UltraLight"
                 FontFamily="Motiva Sans"
                 Width="250">
             </DatePicker>
+            <TextBlock
+                Name="CodeBlock"
+                Margin="0 320 140 0"
+                HorizontalAlignment="Center"
+                Text="Введите код"
+                ZIndex="1"
+                FontWeight="UltraLight"
+                FontFamily="Motiva Sans"
+                FontSize="17"
+                Foreground="#1d99ff">
+            </TextBlock>
+            <TextBox
+                Name="CodeTextBox"
+                FontFamily="Motiva Sans"
+                Margin="0 130 0 0"
+                Foreground="White"
+                Height="40"
+                Width="250"
+                Background="#393c44"
+                VerticalContentAlignment="Center">
+            </TextBox>
             <Button
                 Name="RegButton"
                 Content="ЗАРЕГИСТРИРОВАТЬСЯ"
