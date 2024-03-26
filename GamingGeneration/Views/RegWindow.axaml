@@ -7,7 +7,7 @@
         d:DesignHeight="600"
         x:Class="GamingGeneration.Views.RegWindow"
         Title="RegWindow"
-        Height="650"
+        Height="600"
         Width="800"
         CanResize="False"
         WindowStartupLocation="CenterScreen">
@@ -144,13 +144,15 @@
                 Click="RegButton_OnClick">
             </Button>
             <Button
+                Name="EntButton"
                 HorizontalAlignment="Center"
                 Content="Уже зарегестрирован"
                 Background="Transparent"
                 Margin="0 220 0 0"
                 FontFamily="Motiva Sans"
                 Classes="underline"
-                FontSize="13">
+                FontSize="13"
+                Click="EntButton_OnClick">
             </Button>
         </Panel>
     </Grid>

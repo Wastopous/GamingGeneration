@@ -7,7 +7,7 @@ using GamingGeneration.Views;
 
 namespace GamingGeneration;
 
-public partial class EnterWindow : Window
+public partial class EnterWindow : ConnWindow
 {
     //дальше будет регистрация на различных платформах и вход в них путём всплывающих окон с подробно описанными шагами и каждое окно будет переключаться на следующее 
     #region main
@@ -62,7 +62,6 @@ public partial class EnterWindow : Window
     {
         var regWindow = new RegWindow();
         regWindow.Show();
-        this.Close();
     }
     #endregion
 }

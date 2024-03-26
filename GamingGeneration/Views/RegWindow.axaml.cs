@@ -18,16 +18,13 @@ public partial class RegWindow : ConnWindow
         InitializeComponent();
 
     }
-
-
+    
     private void EntButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        var enterwindow = new EnterWindow();
-        this.Hide();
-        enterwindow.Show();
+        this.Close();
     }
-    
 
+    #region sign up
     private void RegButton_OnClick(object? sender, RoutedEventArgs e)
     {
         string sql = """
@@ -41,27 +38,20 @@ public partial class RegWindow : ConnWindow
             {
                 com.CommandText = sql;
                 com.Parameters.Add("@name", (MySqlDbType.String)); 
-                /*com.Parameters["@name"].Value = (NameTextBox.Text as User).Name; */
+                com.Parameters["@name"].Value = NameTextBox.Text ; 
+                com.Parameters.Add("@lastname", (MySqlDbType.String)); 
+                com.Parameters["@lastname"].Value = SurNameTextBox.Text ; 
+                com.Parameters.Add("@birthdate", (MySqlDbType.Date)); 
+                com.Parameters["@birthdate"].Value = BirthPicker.SelectedDate ; 
+                com.Parameters.Add("@login", (MySqlDbType.String)); 
+                com.Parameters["@login"].Value = LoginTextBox.Text ; 
+                com.Parameters.Add("@pincode", (MySqlDbType.Int32)); 
+                com.Parameters["@pincode"].Value = CodeTextBox.Text ; 
+                com.ExecuteNonQuery();
             }
+            con.Close();
+            this.Close();
         }
     }
-   /* private bool HaveText()
-    {
-        bool haveText = !string.IsNullOrWhiteSpace(LoginTextBox.Text) &&
-                         !string.IsNullOrWhiteSpace(NameTextBox.Text) &&
-                         !string.IsNullOrWhiteSpace(SurNameTextBox.Text) &&
-                         !string.IsNullOrWhiteSpace(BirthPicker.ToString());
-
-        if (!haveText)
-        {
-            RegButton.IsEnabled = false;
-        }
-        else
-        {
-            RegButton.IsEnabled = true;
-        }
-
-        return haveText;
-    }
-    */
+    #endregion
 }
